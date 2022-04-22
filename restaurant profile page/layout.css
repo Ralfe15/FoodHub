@@ -1,0 +1,142 @@
+body{
+    background-color: white;
+    max-width: 60em;
+    margin: auto;
+}
+
+.profile{
+    height:auto;
+    margin: 5% 0% 5% 10%;
+    display: grid;
+    grid-template-columns: 3fr 5fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#title{
+    display: flex;
+    grid-area: 1 / 2 / span 1 / span 1;
+}
+
+#title > a{
+    justify-self: center;
+    align-self: flex-end;
+}
+
+#logo{
+    display: flex;
+    grid-area: 1 / 1 / span 3 / span 1;
+}
+
+#logo > img{
+    margin: 1em;
+    border-radius: 50%;
+}
+
+#category{
+    align-self: flex-start;
+    justify-self: flex-start;
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+
+#price{
+    align-self: flex-start;
+    justify-self: flex-end;
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+
+#rating{
+    grid-area: 1 / 3 / span 1 / span 1;
+}
+
+#search{
+    grid-area: 3 / 2 / span 1 / span 1;
+}
+
+#highlights{
+    display: flex;
+}
+
+#highlights > article{
+    border-radius: 0.8em;
+    width: 20em;
+}
+
+#highlights img{
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
+}
+
+.dish{
+    margin: 0.5em;
+    font-weight: 900;
+}
+
+article{
+    margin: 1em;
+}
+
+.dish_price{
+    font-size: 150%;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#menu {
+    font-size: 110%;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+}
+
+#register{
+    display: flex;
+    justify-content: end;
+}
+
+#return::before{
+    content: "\276E  ";
+}
+
+#signup, #login{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#login{
+    border-radius: 0.5em;
+    background-color: lightgray;
+}
+
+#search > input{
+    box-sizing:border-box;
+    margin-left: 0.5em;
+    margin-right:1em;
+    width: 80%;
+    height: 3em;
+    border-radius: 1em;
+    padding: 1em;
+    border:none;
+    background-color: lightgray;
+}
+
+#search > input::placeholder{
+    color:black;
+}
+
+#search button{
+    font-size: 200%;
+    background-color: white;
+    border: none;
+    color: darkgray;
+    position: relative;
+    top: 0.2em;
+    right: 0.2em;
+}
