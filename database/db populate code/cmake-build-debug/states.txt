@@ -1,0 +1,5 @@
+processing
+preparing
+waiting to deliver
+delivering
+delivered

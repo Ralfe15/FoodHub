@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/Database.cpp
+Database.h
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/Database.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+ctime
+-
+
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/Database.h
+string
+-
+vector
+-
+
