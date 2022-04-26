@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db
+# Install script for directory: C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

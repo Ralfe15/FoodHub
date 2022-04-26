@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db"
+CMAKE_SOURCE_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled.dir/depend.make
@@ -67,29 +67,29 @@ include CMakeFiles/untitled.dir/flags.make
 
 CMakeFiles/untitled.dir/main.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\main.cpp.obj -c "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\main.cpp.obj -c "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\main.cpp"
 
 CMakeFiles/untitled.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\main.cpp" > CMakeFiles\untitled.dir\main.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\main.cpp" > CMakeFiles\untitled.dir\main.cpp.i
 
 CMakeFiles/untitled.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\main.cpp" -o CMakeFiles\untitled.dir\main.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\main.cpp" -o CMakeFiles\untitled.dir\main.cpp.s
 
 CMakeFiles/untitled.dir/Database.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/Database.cpp.obj: ../Database.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/Database.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\Database.cpp.obj -c "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\Database.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/Database.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\Database.cpp.obj -c "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\Database.cpp"
 
 CMakeFiles/untitled.dir/Database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/Database.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\Database.cpp" > CMakeFiles\untitled.dir\Database.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\Database.cpp" > CMakeFiles\untitled.dir\Database.cpp.i
 
 CMakeFiles/untitled.dir/Database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/Database.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\Database.cpp" -o CMakeFiles\untitled.dir\Database.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\Database.cpp" -o CMakeFiles\untitled.dir\Database.cpp.s
 
 # Object files for target untitled
 untitled_OBJECTS = \
@@ -105,7 +105,7 @@ untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/linklibs.rsp
 untitled.exe: CMakeFiles/untitled.dir/objects1.rsp
 untitled.exe: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable untitled.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable untitled.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\untitled.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -117,6 +117,6 @@ CMakeFiles/untitled.dir/clean:
 .PHONY : CMakeFiles/untitled.dir/clean
 
 CMakeFiles/untitled.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\Proj\db\cmake-build-debug\CMakeFiles\untitled.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug" "C:\Users\igcbs\Desktop\College\UPorto 2020-\Semestre 4\LTW\ltw-t09-g05\database\db populate code\cmake-build-debug\CMakeFiles\untitled.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/untitled.dir/depend
 

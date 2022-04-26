@@ -1,3 +1,13 @@
+<?php  
+$db = new PDO('sqlite:db.db');
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$res = $_GET['res'];
+$stmt = $db->prepare('Select * from Restaurant where idRestaurant = ?');
+$stmt->execute(array($res));
+$result = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,7 +27,7 @@
             </div>
         </div>
         <div class="profile">
-            <h1 id="title"><a href="restaurant.html">Restaurant Name</a></h1>
+            <h1 id="title"><a href="restaurant.php?res=<?php echo($res)?>"><?php echo($result[0]["name"])?></a></h1>
             <a href="restaurant.html" id="logo"><img src="https://picsum.photos/200/200?business"></a>
             <h4 id="category">Food</h4>
             <h4 id="price">From $0,00</h4>

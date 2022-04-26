@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/Database.cpp
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code/Database.cpp
 Database.h
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/Database.h
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code/Database.h
 iostream
 -
 fstream
@@ -18,9 +18,15 @@ cstdlib
 ctime
 -
 
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/Proj/db/Database.h
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code/Database.h
 string
 -
 vector
 -
+
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code/main.cpp
+iostream
+-
+Database.h
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/db populate code/Database.h
 
