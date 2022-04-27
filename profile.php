@@ -1,31 +1,20 @@
-<?php  
-$db = new PDO('sqlite:db.db');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<?php 
+declare(strict_types = 1);
+require_once('database/connection.db.php');
+
+$db = getDatabaseConnection();
 
 $res = $_GET['res'];
 $stmt = $db->prepare('Select * from Restaurant where idRestaurant = ?');
 $stmt->execute(array($res));
 $result = $stmt->fetchAll();
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ifoodclone</title>    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <link href="layout.css" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-        <div id="menu">
-            <a href="search.html" id="return">Go Back</a>
-            <div id="register">
-                <a href="Login.html" id="signup">Sign Up</a>
-                <a href="Login.html" id="login">Login</a>
-            </div>
-        </div>
+<?php 
+    require_once('templates/common.tpl.php');
+
+    drawHeader("style-profile");
+?>
+<div class="container">
         <div class="profile">
             <h1 id="title"><a href="restaurant.php?res=<?php echo($res)?>"><?php echo($result[0]["name"])?></a></h1>
             <a href="restaurant.html" id="logo"><img src="https://picsum.photos/200/200?business"></a>
@@ -55,5 +44,5 @@ $result = $stmt->fetchAll();
             <h3 class="dish_price">$0.00</h3>
         </article>
     </section>
-  </body>
-</html>
+</div>
+<?=drawFooter();?>

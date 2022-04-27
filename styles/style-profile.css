@@ -1,7 +1,67 @@
-body{
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+*{
+    font-family: "Inter";
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#highlights article{
+    border: thin solid black;
+}
+
+#title{
+    font-size:300%;
+    font-weight: 900;
+    margin:0;
+}
+
+h4{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    margin-left: 0.1em;
+    margin-right: 0.2em;
+}
+
+h3, h4{
+    font-size: 120%;
+    font-weight: lighter;
+}
+
+#rating{
+    display: none;
+}
+
+
+footer {
+
+    background-color: black;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 35px;
+    color: white;
+}   
+
+/* Layout */
+.container{
     background-color: white;
     max-width: 60em;
     margin: auto;
+}
+
+body{
+    margin:0;
+}
+
+body>header {
+    display: block;
+    padding: 1em;
+    margin: 1em;
 }
 
 .profile{
@@ -140,3 +200,4 @@ article{
     top: 0.2em;
     right: 0.2em;
 }
+
