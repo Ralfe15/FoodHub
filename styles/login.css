@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+* {
+    font-family: "Inter";
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    margin: 0;
+}
+
+body>header {
+    display: block;
+    padding: 1em;
+    margin: 1em;
+}
+
+#menu {
+    font-size: 110%;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+}
+
+#form_login {
+    left      : 50%;
+    top       : 50%;
+    position  : absolute;
+    transform : translate(-50%, -50%);
+}
+
+footer {
+    background-color: black;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 35px;
+    color: white;
+}

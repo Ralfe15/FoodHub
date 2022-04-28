@@ -21,8 +21,10 @@ void Database::readFile(string filename, vector<string>& vec){
     file.close();
 }
 
+
 int Database::generateUsers(int n){
     readFile("names", names);
+    readFile("emails", emails);
     readFile("surnames", surnames);
     readFile("passwords", passwords);
     if(cities.empty()) {
@@ -50,8 +52,10 @@ CREATE TABLE User(
         string tempAddress = to_string(rand()%1000) + ", " + streets[rand()%streets.size()] + " - " + cities[rand()%cities.size()];
         string tempPhone = to_string(100 + rand()%900) + to_string(100 + rand()%900) + to_string(100 + rand()%900);
         string tempPassword = passwords[rand()%passwords.size()];
+        string tempEmail = emails[rand()%emails.size()];
 
-        tempStr += (tempName + "', " + tempPhone + ", '" + tempAddress + "', '" + tempPassword+"');");
+
+        tempStr += (tempName + "', " + "\'"+tempEmail+"\'" + ", " + tempPhone + ", '" + tempAddress + "', '" + tempPassword+"');");
         users.push_back(tempStr);
     }
     return 0;

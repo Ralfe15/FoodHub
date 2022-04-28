@@ -15,6 +15,7 @@ class Database {
     vector<string> cities;
     vector<string> streets;
     vector<string> names;
+    vector<string> emails;
     vector<string> surnames;
     vector<string> passwords;
         vector<string> users;

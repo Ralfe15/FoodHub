@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS Dish_order;
 CREATE TABLE User(
     idUser number UNIQUE NOT NULL,
     name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
     phone varchar(30) NOT NULL,
     address varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
