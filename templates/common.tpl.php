@@ -13,10 +13,9 @@
     <header>
         <div id="menu">
             <a href="index.php" id="return">Ifoodclone</a>
-            <div id="register">
-                <a href="signup.php" id="signup">Sign Up</a>
-                <a href="login.php" id="login">Login</a>
-            </div>
+            <?php if (isset($_SESSION['id'])) drawLogoutOptions($_SESSION["name"]);
+            else drawLoginOptions();
+            ?>
         </div>
     </header>
 
@@ -47,4 +46,18 @@
             
         </div>
     </header>
+<?php }?>
+
+<?php function drawLoginOptions() { ?>
+    <div id="register">
+        <a href="signup.php" id="signup">Sign Up</a>
+        <a href="login.php" id="login">Login</a>
+    </div>
+<?php }?>
+
+<?php function drawLogoutOptions(string $name) { ?>
+    <div id="register">
+        <a href="action_logout.php" id="signup">Log out</a>
+        <a href="" id="login"><?=$name?></a>
+    </div>
 <?php }?>

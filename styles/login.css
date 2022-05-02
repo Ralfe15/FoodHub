@@ -12,6 +12,16 @@ body {
     margin: 0;
 }
 
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+form > p:last-child{
+    display: flex;
+    justify-content: center;
+}
+
 body>header {
     display: block;
     padding: 1em;
@@ -24,6 +34,24 @@ body>header {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr;
+}
+
+#signup,
+#login {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#register {
+    display: flex;
+    justify-content: end;
+}
+
+#login {
+    border-radius: 0.5em;
+    background-color: lightgray;
 }
 
 #form_login {

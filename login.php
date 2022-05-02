@@ -1,17 +1,21 @@
 <?php 
+session_start();
 require_once('templates/common.tpl.php');
 
-drawHeaderLogged("login");
+drawHeader("login");
 ?>
-<form id="form_login">
+<div class="title">
+<h1>Login page</h1>
+</div>
+<form action="action_login.php" method="post" id="form_login">
   <p> 
-      <input type="text" id="username" placeholder="username" />
+      <input type="text" required name="email" placeholder="username" />
   </p>
   <p>
-      <input type="password" id="password" placeholder="password" />
+      <input type="password" required name="password" placeholder="password" />
   </p>
   <p>
-      <button id="submitbutton" type="button">Login</button>
+      <button type="submit">Login</button>
   </p>
 </form>
 <?=drawFooter();?>

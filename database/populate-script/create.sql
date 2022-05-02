@@ -10,55 +10,49 @@ DROP TABLE IF EXISTS Dish;
 DROP TABLE IF EXISTS Dish_order;
 
 CREATE TABLE User(
-    idUser number UNIQUE NOT NULL,
+    idUser integer PRIMARY KEY AUTOINCREMENT,
     name varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
     phone varchar(30) NOT NULL,
     address varchar(255) NOT NULL,
-    password varchar(255) NOT NULL,
-    PRIMARY KEY(idUser)
+    password varchar(255) NOT NULL
 );
 
 CREATE TABLE Restaurant(
-    idRestaurant number UNIQUE NOT NULL,
+    idRestaurant integer PRIMARY KEY AUTOINCREMENT,
     name varchar(255) NOT NULL,
     category varchar(100) NOT NULL,
     address varchar(255) NOT NULL,
-    logo varchar(255) NOT NULL,
-    PRIMARY KEY(idRestaurant)
+    logo varchar(255) NOT NULL
 );
 
 CREATE TABLE Review(
-    idReview number UNIQUE NOT NULL,
+    idReview integer PRIMARY KEY AUTOINCREMENT,
     review varchar(255),
     rating number,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
-    idUser number NOT NULL REFERENCES User(idUser),
-    PRIMARY KEY(idReview)
+    idUser number NOT NULL REFERENCES User(idUser)
 );
 
 CREATE TABLE Dish(
-    idDish number UNIQUE NOT NULL,
+    idDish integer PRIMARY KEY,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
     name varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
     photo varchar(255) NOT NULL,
-    category varchar(100) NOT NULL,
-    PRIMARY KEY(idDish)
+    category varchar(100) NOT NULL
 );
 
 CREATE TABLE Dish_order(
-    idDish_order number UNIQUE NOT NULL,
+    idDish_order integer PRIMARY KEY,
     idDish number NOT NULL REFERENCES Dish(idDish),
     idUser number NOT NULL REFERENCES User(idUser),
-    state varchar(50) NOT NULL,
-    PRIMARY KEY(idDish_order)
+    state varchar(50) NOT NULL
 );
 
 CREATE TABLE Restaurant_owner(
-    idRestaurant_owner number UNIQUE NOT NULL,
+    idRestaurant_owner integer PRIMARY KEY,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
-    idUser number NOT NULL REFERENCES User(idUser),
-    PRIMARY KEY(idRestaurant_owner)
+    idUser number NOT NULL REFERENCES User(idUser)
 );
 

@@ -1,7 +1,10 @@
 <?php 
     declare(strict_types = 1);
-    require_once('templates/common.tpl.php');
 
+    session_start();
+    
+    require_once('templates/common.tpl.php');
+ 
     drawHeader("style-landing");
 ?>
         <img class="logo-home" src="https://manualdeimagem.up.pt/files/uportonegativofundoopaco.jpg" />
