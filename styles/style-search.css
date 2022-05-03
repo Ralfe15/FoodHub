@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+* {
+    font-family: "Inter";
+}
+
+#register {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+#login{
+    border-radius: 0.5em;
+    background-color: lightgray;
+}
+
+#signup, #login{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#search > input{
+    box-sizing:border-box;
+    margin-left: 0.5em;
+    margin-right:1em;
+    width: 80%;
+    height: 3em;
+    border-radius: 1em;
+    padding: 1em;
+    border:none;
+    background-color: lightgray;
+}
+
+#search > input::placeholder{
+    color:black;
+}

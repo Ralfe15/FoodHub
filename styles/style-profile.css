@@ -175,7 +175,7 @@ article{
     background-color: lightgray;
 }
 
-#search > input{
+.search-bar-home > form > input{
     box-sizing:border-box;
     margin-left: 0.5em;
     margin-right:1em;
