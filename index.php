@@ -9,7 +9,7 @@
 ?>
         <img class="logo-home" src="https://manualdeimagem.up.pt/files/uportonegativofundoopaco.jpg" />
         <div id="search-div">
-            <form action="" id="search">
+            <form action="search.php" id="search" method = "POST">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit" class="search-button"><i></i>&#x276F</button>
             </form>
