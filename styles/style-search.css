@@ -9,16 +9,45 @@
     right: 1em;
 }
 
-#login{
-    border-radius: 0.5em;
-    background-color: lightgray;
+body>header {
+    display: block;
+    padding: 1em;
+    margin: 1em;
 }
 
-#signup, #login{
+#menu {
+    font-size: 110%;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+}
+
+#signup,
+#login {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
+}
+
+#register {
+    display: flex;
+    justify-content: end;
+}
+
+#login {
+    border-radius: 0.5em;
+    background-color: lightgray;
+}
+
+#results-grid
+{
+    display: grid;  
+    grid-template-columns: 1fr 1fr;       
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    place-items: center;
 }
 
 a{
@@ -40,4 +69,9 @@ a{
 
 #search > input::placeholder{
     color:black;
+}
+
+article
+{
+    background-color: lightgray;
 }
