@@ -124,6 +124,7 @@ footer {
 
     background-color: black;
     padding: 1em 1em 0em 1em;
+    position: fixed;
     bottom: 0;
     width: 100vw;
     height: 35px;
