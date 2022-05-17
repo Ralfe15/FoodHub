@@ -23,6 +23,7 @@
 
 <?php function drawFooter() { ?>
 </main>
+<link rel="stylesheet" href="styles/style-landing.css">
 <footer>
     LTW Project &copy; 2022
 </footer>

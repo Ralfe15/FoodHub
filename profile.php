@@ -16,7 +16,7 @@ $result = $stmt->fetchAll();
 ?>
 <div class="container">
         <div class="profile">
-            <h1 id="title"><a href="restaurant.php?res=<?php echo($res)?>"><?php echo($result[0]["name"])?></a></h1>
+            <h1 id="title"><a href="profile.php?res=<?php echo($res)?>"><?php echo($result[0]["name"])?></a></h1>
             <a href="restaurant.html" id="logo"><img src="https://picsum.photos/200/200?business"></a>
             <h4 id="category">Food</h4>
             <h4 id="price">From $0,00</h4>

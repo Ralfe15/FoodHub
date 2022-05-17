@@ -41,14 +41,7 @@ body>header {
     background-color: lightgray;
 }
 
-#results-grid
-{
-    display: grid;  
-    grid-template-columns: 1fr 1fr;       
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    place-items: center;
-}
+
 
 a{
     text-decoration: none;
@@ -71,7 +64,17 @@ a{
     color:black;
 }
 
-article
+#results-grid
 {
+    display: flex;  
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#results-grid > a
+{
+    margin: 2em;
+    flex-shrink: 0;
     background-color: lightgray;
+    width: 20%;
 }

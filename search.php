@@ -13,11 +13,10 @@ $results = $stmt->fetchAll();
 
 <?=drawHeader("style-search");?>
 <html lang="en-US">
-    <div class="search-bar-home">
-        <form action="profile.php" method="get">
-            <input type="text" placeholder="Showing results for: 
- <?= $_POST['search'];?>">
-            <button type="submit" class="search-button"></button>
+    <div id="search-div">
+        <form action="search.php" id="search" method = "POST">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit" class="search-button"><i></i>&#x276F</button>
         </form>
     </div>
     
@@ -27,12 +26,14 @@ $results = $stmt->fetchAll();
         foreach($results as $restaurant)
         {
         ?>
-        <article>
-            <img src="https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png" width="50" height="50">
-            <h2><?=$restaurant['name'];?></h2>
-            <h3><?=$restaurant['category'];?></h3>
-            <img src="https://thumbs.dreamstime.com/z/imagem-do-%C3%ADcone-de-estrelas-83946136.jpg" width="50" height="50">
-        </article>
+            <a href="profile.php?res=<?php echo($restaurant['idRestaurant'])?>">
+                <article>
+                    <img src="https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png" width="50" height="50">
+                    <h2><?=$restaurant['name'];?></h2>
+                    <h3><?=$restaurant['category'];?></h3>
+                    <img src="https://thumbs.dreamstime.com/z/imagem-do-%C3%ADcone-de-estrelas-83946136.jpg" width="50" height="50">
+                </article>
+            </a>
         <?php }
         ?>
     </section>

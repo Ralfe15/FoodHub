@@ -123,8 +123,7 @@ a {
 footer {
 
     background-color: black;
-    padding: 1em;
-    position: absolute;
+    padding: 1em 1em 0em 1em;
     bottom: 0;
     width: 100vw;
     height: 35px;
