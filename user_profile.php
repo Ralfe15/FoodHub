@@ -20,6 +20,7 @@ $stmt = $db->prepare('Select * from restaurant_owner where idUser = ?');
 $stmt->execute(array($id));
 $result2 = $stmt->fetchAll();
 
+
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="javascript/script.js"></script>

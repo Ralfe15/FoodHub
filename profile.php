@@ -12,7 +12,13 @@ $result = $stmt->fetchAll();
 $stmt = $db->prepare('Select * from Dish where idRestaurant = ?');
 $stmt->execute(array($res));
 $dishes = $stmt->fetchAll();
-
+foreach($dishes as $dish){
+    $prices[] = intval($dish['price']);
+}
+if(isset($prices))
+    $minprice = $prices[0];
+else
+    $minprice = 0;
 ?>
 <?php 
     require_once('templates/common.tpl.php');
@@ -25,7 +31,7 @@ $dishes = $stmt->fetchAll();
             <h1 id="title"><a href="profile.php?res=<?php echo($res)?>"><?php echo($result[0]["name"])?></a></h1>
             <a href="restaurant.html" id="logo"><img src="https://picsum.photos/200/200?business"></a>
             <h4 id="category">Food</h4>
-            <h4 id="price">From $0,00</h4>
+            <h4 id="price"><?="From $$minprice,00"?></h4>
             <h4 id="rating">5</h4>
             <form action="save.php" method="get" id="search">
                 <input type="text" name="search" placeholder="Search dishes">
