@@ -12,9 +12,14 @@ drawHeader('login');
 $db = getDatabaseConnection();
 
 $id = $_SESSION['id'];
+
 $stmt = $db->prepare('Select * from user where idUser = ?');
 $stmt->execute(array($id));
 $result = $stmt->fetchAll();
+$stmt = $db->prepare('Select * from restaurant_owner where idUser = ?');
+$stmt->execute(array($id));
+$result2 = $stmt->fetchAll();
+
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="javascript/script.js"></script>
@@ -50,17 +55,28 @@ $result = $stmt->fetchAll();
                 <label><?= ucfirst($field) ?>:</label>
                 <?php
                 if ($field == 'password') { ?>
-                <input id='password' type=<?= $type ?> required name="<?= $field ?>" value="<?= $value ?>" />
+                    <input id='password' type=<?= $type ?> required name="<?= $field ?>" value="<?= $value ?>" />
                     <button type="button" id='toggle' onclick="togglePassword()"><i class="fa fa-eye"></i></button>
-                <?php } else {?>
+                <?php } else { ?>
                     <input type=<?= $type ?> required name="<?= $field ?>" value="<?= $value ?>" />
-                <?php 
+                <?php
                 }
                 ?>
             </p>
         <?php
         }
         ?>
-        <button type="submit">Edit profile</button>
+        <p>
+            <button type="submit">Edit profile</button>
+        </p>
     </form>
 </div>
+<?php 
+if($result2){
+?>
+<div class="form-login">
+    <button href='update_restaurant.php'>Edit restaurant</button>
+</div>
+<?php 
+}
+?>

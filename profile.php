@@ -8,9 +8,15 @@ $res = $_GET['res'];
 $stmt = $db->prepare('Select * from Restaurant where idRestaurant = ?');
 $stmt->execute(array($res));
 $result = $stmt->fetchAll();
+
+$stmt = $db->prepare('Select * from Dish where idRestaurant = ?');
+$stmt->execute(array($res));
+$dishes = $stmt->fetchAll();
+
 ?>
 <?php 
     require_once('templates/common.tpl.php');
+    require_once('templates/restaurant.tpl.php');
 
     drawHeader("style-profile");
 ?>
@@ -28,21 +34,15 @@ $result = $stmt->fetchAll();
         </div>
     </header>
     <section id="highlights">
-        <article>
-            <img src="https://picsum.photos/400/200?business/1">
-            <h2 class="dish">Dish</h2>
-            <h3 class="dish_price">$0.00</h3>
-        </article>
-        <article>
-            <img src="https://picsum.photos/400/200?business/2">
-            <h2 class="dish">Dish</h2>
-            <h3 class="dish_price">$0.00</h3>
-        </article>
-        <article>
-            <img src="https://picsum.photos/400/200?business/3">
-            <h2 class="dish">Dish</h2>
-            <h3 class="dish_price">$0.00</h3>
-        </article>
+        <?php 
+        foreach($dishes as $dish) { 
+            drawDish(
+             "https://picsum.photos/400/200?business/1", //$dish['photo'],
+             $dish['name'], 
+             $dish['price'],
+            $dish['category']
+            );
+        } ?>
     </section>
 </div>
 <?=drawFooter();?>
