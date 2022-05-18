@@ -11,9 +11,10 @@
   $name = $_POST["name"];
   $phone = $_POST["phone"];
   $address = $_POST["address"];
-  $id = $_SESSION['id'];
 
-  $stmt = $db->prepare('Update User SET name = ?, email = ?, phone = ?, address = ?, password = ? WHERE idUser = ?');
-  $stmt -> execute(array($name, $username, $phone, $address, $password, $id));
 
-  header('Location: http://localhost:9000/index.php');
+  $stmt = $db->prepare('Insert into User (name, email, phone, address, password) VALUES (?, ?, ?, ?, ?)');
+  $stmt -> execute(array($name, $username, $phone, $address, $password));
+
+  header('Location: http://localhost:9000/pages/index.php');
+

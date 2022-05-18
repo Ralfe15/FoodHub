@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('templates/common.tpl.php');
+require_once(__DIR__ . '/../templates/common.tpl.php');
 
 drawHeader("login");
 ?>
@@ -8,7 +8,7 @@ drawHeader("login");
     <h1>Login page</h1>
 </div>
 <div class="form-login">
-    <form action="action_login.php" method="post" id="form_login">
+    <form action="../actions/action_login.php" method="post" id="form_login">
         <p>
             <input type="text" required name="email" placeholder="username" />
         </p>

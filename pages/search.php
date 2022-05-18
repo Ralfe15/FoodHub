@@ -1,7 +1,9 @@
 <?php 
 declare(strict_types = 1);
-require_once('templates/common.tpl.php');
-require_once('database/connection.db.php');
+session_start();
+
+require_once(__DIR__ . '/../templates/common.tpl.php');
+require_once(__DIR__ . '/../database/connection.db.php');
 
 $db = getDatabaseConnection();
 
@@ -14,7 +16,7 @@ $results = $stmt->fetchAll();
 <?=drawHeader("style-search");?>
 <html lang="en-US">
     <div id="search-div">
-        <form action="search.php" id="search" method = "POST">
+        <form action="/../pages/search.php" id="search" method = "POST">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit" class="search-button"><i></i>&#x276F</button>
         </form>
@@ -26,7 +28,7 @@ $results = $stmt->fetchAll();
         foreach($results as $restaurant)
         {
         ?>
-            <a href="profile.php?res=<?php echo($restaurant['idRestaurant'])?>">
+            <a href="../pages/profile.php?res=<?php echo($restaurant['idRestaurant'])?>">
                 <article>
                     <img src="https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png" width="50" height="50">
                     <h2><?=$restaurant['name'];?></h2>

@@ -6,13 +6,13 @@
 <head>
     <title>Ifoodclone</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles/<?=$style?>.css">
+    <link rel="stylesheet" href="../styles/<?=$style?>.css">
 </head>
 
 <body>
     <header>
         <div id="menu">
-            <a href="index.php" id="return">Ifoodclone</a>
+            <a href="../pages/index.php" id="return">Ifoodclone</a>
             <?php if (isset($_SESSION['id'])) drawLogoutOptions($_SESSION["name"]);
             else drawLoginOptions();
             ?>
@@ -23,7 +23,7 @@
 
 <?php function drawFooter() { ?>
 </main>
-<link rel="stylesheet" href="styles/style-landing.css">
+<link rel="stylesheet" href="../styles/style-landing.css">
 <footer>
     LTW Project &copy; 2022
 </footer>
@@ -37,13 +37,13 @@
 <head>
     <title>Ifoodclone</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles/<?=$style?>.css">
+    <link rel="stylesheet" href="../styles/<?=$style?>.css">
 </head>
 
 <body>
     <header>
         <div id="menu">
-            <a href="index.php" id="return">Ifoodclone</a>
+            <a href="../pages/index.php" id="return">Ifoodclone</a>
             
         </div>
     </header>
@@ -51,14 +51,14 @@
 
 <?php function drawLoginOptions() { ?>
     <div id="register">
-        <a href="signup.php" id="signup">Sign Up</a>
-        <a href="login.php" id="login">Login</a>
+        <a href="../pages/signup.php" id="signup">Sign Up</a>
+        <a href="../pages/login.php" id="login">Login</a>
     </div>
 <?php }?>
 
 <?php function drawLogoutOptions(string $name) { ?>
     <div id="register">
-        <a href="action_logout.php" id="signup">Log out</a>
-        <a href="user_profile.php" id="login"><?=$name?></a>
+        <a href="../actions/action_logout.php" id="signup">Log out</a>
+        <a href="../actions/user_profile.php" id="login"><?=$name?></a>
     </div>
 <?php }?>

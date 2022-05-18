@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 session_start();
-require_once('templates/common.tpl.php');
-require_once('database/connection.db.php');
+require_once(__DIR__ . '/../templates/common.tpl.php');
+require_once(__DIR__ . '/../database/connection.db.php');
 
 
-if (!isset($_SESSION['id'])) header('Location: http://localhost:9000/login.php');;
+if (!isset($_SESSION['id'])) header('Location: http://localhost:9000/pages/login.php');;
 drawHeader('login');
 
 $db = getDatabaseConnection();
@@ -27,7 +27,7 @@ $result2 = $stmt->fetchAll();
 
 <h1 style="text-align: center;">Edit profile </h1>
 <div class="form-login">
-    <form action="action_update_profile.php" method="post">
+    <form action="../actions/action_update_profile.php" method="post">
         <?php
         unset($result[0]['idUser']); //we dont want do display this
         foreach ($result[0] as $field => $value) {
@@ -76,7 +76,7 @@ $result2 = $stmt->fetchAll();
 if($result2){
 ?>
 <div class="form-login">
-    <button href='update_restaurant.php'>Edit restaurant</button>
+    <button href='../pages/update_restaurant.php'>Edit restaurant</button>
 </div>
 <?php 
 }
