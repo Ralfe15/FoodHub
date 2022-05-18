@@ -58,7 +58,7 @@
 
 <?php function drawLogoutOptions(string $name) { ?>
     <div id="register">
-        <a href="../actions/action_logout.php" id="signup">Log out</a>
-        <a href="../actions/user_profile.php" id="login"><?=$name?></a>
+        <a href="/../actions/action_logout.php" id="signup">Log out</a>
+        <a href="/../pages/user_profile.php" id="login"><?=$name?></a>
     </div>
 <?php }?>
