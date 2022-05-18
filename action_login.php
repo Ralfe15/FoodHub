@@ -16,7 +16,10 @@
   if ($result) {
     $_SESSION['id'] = $result[0]["idUser"];
     $_SESSION['name'] =  $result[0]["name"];
-
+    header('Location: http://localhost:9000/index.php?');
   }
-  header('Location: http://localhost:9000/index.php');
+  else{
+    header('Location: http://localhost:9000/login.php?success=false');
+}
+  
 

@@ -7,6 +7,7 @@ drawHeader("login");
 <div class="title">
 <h1>Sign up</h1>
 </div>
+<div class="form-login">
 <form action="action_signup.php" method="post" id="form_login">
 <p> 
       <input type="text" required name="name" placeholder="name" />
@@ -30,4 +31,5 @@ drawHeader("login");
       <button type="submit">Sign up</button>
   </p>
 </form>
+</div>
 <?=drawFooter();?>
