@@ -8,7 +8,7 @@ require_once(__DIR__ . '/../database/connection.db.php');
 $db = getDatabaseConnection();
 
 $res = "%{$_POST['search']}%";
-$stmt = $db->prepare('Select * from Restaurant natural join Review where name LIKE ?');
+$stmt = $db->prepare('Select * from Restaurant where name LIKE ?');
 $stmt->execute(array($res));
 $results = $stmt->fetchAll();
 ?>
