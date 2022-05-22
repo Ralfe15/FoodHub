@@ -1,53 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Inter');
-* {
-    font-family: "Inter";
-}
-
-#register {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-}
-
-body>header {
-    display: block;
-    padding: 1em;
-    margin: 1em;
-}
-
-#menu {
-    font-size: 110%;
-    margin: 1em;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr;
-}
-
-#signup,
-#login {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#register {
-    display: flex;
-    justify-content: end;
-}
-
-#login {
-    border-radius: 0.5em;
-    background-color: lightgray;
-}
-
-
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
 #search > input{
     box-sizing:border-box;
     margin-left: 0.5em;
@@ -58,10 +8,6 @@ a{
     padding: 1em;
     border:none;
     background-color: lightgray;
-}
-
-#search > input::placeholder{
-    color:black;
 }
 
 #results-grid

@@ -2,8 +2,13 @@
 session_start();
 require_once(__DIR__ . '/../templates/common.tpl.php');
 
-drawHeader("login");
+drawHeader();
 ?>
+<html>
+    <head>
+        <link rel="stylesheet" href="../styles/login.css">
+    </head>
+    <body>
 <div class="title">
     <h1>Login page</h1>
 </div>
@@ -28,4 +33,6 @@ drawHeader("login");
     <?php
     }
     ?>
-<?= drawFooter(); ?>
+        </body>
+</html>
+<?=drawFooter();?>

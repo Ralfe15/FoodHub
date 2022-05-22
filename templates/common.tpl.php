@@ -1,12 +1,11 @@
 <?php declare(strict_types = 1); ?>
-
-<?php function drawHeader($style) { ?> 
+<?php function drawHeader() { ?> 
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <title>Ifoodclone</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../styles/<?=$style?>.css">
+    <link rel="stylesheet" href="../styles/common.css">
 </head>
 
 <body>
@@ -22,8 +21,6 @@
 <?php }?>
 
 <?php function drawFooter() { ?>
-</main>
-<link rel="stylesheet" href="../styles/style-landing.css">
 <footer>
     LTW Project &copy; 2022
 </footer>
@@ -31,13 +28,12 @@
 </html>
 <?php }?>
 
-<?php function drawHeaderLogged($style) { ?>
+<?php function drawHeaderLogged() { ?>
     <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <title>Ifoodclone</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../styles/<?=$style?>.css">
 </head>
 
 <body>
