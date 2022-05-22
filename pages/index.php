@@ -18,8 +18,8 @@
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit" class="search-button"><i></i>&#x276F</button>
             </form>
-            </div>
-            </body>
+        </div>
+    </body>
 </html>
 <?php 
     drawFooter();

@@ -8,6 +8,8 @@ DROP TABLE IF EXISTS Review;
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS Dish;
 DROP TABLE IF EXISTS Dish_order;
+DROP TABLE IF EXISTS Restaurant_owner;
+DROP TABLE IF EXISTS Img;
 
 CREATE TABLE User(
     idUser integer PRIMARY KEY AUTOINCREMENT,
@@ -55,4 +57,14 @@ CREATE TABLE Restaurant_owner(
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
     idUser number NOT NULL REFERENCES User(idUser)
 );
+
+CREATE TABLE Img(
+  idImage integer PRIMARY KEY,
+  title varchar(255) NOT NULL,
+  type integer NOT NULL,
+  idUser integer REFERENCES User(idUser),
+  idRestaurant integer REFERENCES Restaurant(idRestaurant),
+  idDish integer REFERENCES Dish(idDish)
+);
+
 

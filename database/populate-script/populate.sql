@@ -1,6 +1,13 @@
 PRAGMA foreign_keys=ON;
 BEGIN TRANSACTION;
 
+DELETE FROM User;
+DELETE FROM Restaurant;
+DELETE FROM Review;
+DELETE FROM Dish;
+DELETE FROM Dish_order;
+DELETE FROM Restaurant_owner;
+
 insert into User values(0, 'Sally Richmond', 'mysteriousGlenn41@juno.com', 494886694, '390, Maple Drive - Port St. Lucie', 'doUUlFBbMi');
 insert into User values(1, 'Francis Orr', 'pleasantKyle@facebook.com', 811592890, '575, Walnut Street - Duluth', 'CYxwvXBdwT');
 insert into User values(2, 'Cornelius Roberson', 'lazyPedro@yahoo.de', 102918343, '495, Pheasant Lane - Green Bay', 's72lEIzR6F');

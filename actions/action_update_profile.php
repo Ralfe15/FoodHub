@@ -16,4 +16,5 @@
   $stmt = $db->prepare('Update User SET name = ?, email = ?, phone = ?, address = ?, password = ? WHERE idUser = ?');
   $stmt -> execute(array($name, $username, $phone, $address, $password, $id));
 
-  header('Location: http://localhost:9000/pages/index.php');
+  header('Location: http://localhost:9000/pages/index.php'); 
+  ?>
