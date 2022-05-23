@@ -9,18 +9,20 @@
   $username = $_POST["email"];
   $password = $_POST["password"];
 
-  $stmt = $db->prepare('Select * from user where email = ? and password = ?');
-  $stmt -> execute(array($username, $password));
+  $stmt = $db->prepare('Select * from user where email = ?');
+  $stmt -> execute(array(strtolower($username)));
   $result = $stmt->fetchAll();
 
   if ($result) {
+    if(password_verify($password, $result[0]["password"])){ 
     $_SESSION['id'] = $result[0]["idUser"];
     $_SESSION['name'] =  $result[0]["name"];
     header('Location: http://localhost:9000/pages/index.php?');
+    }
+    else{
+      header('Location: http://localhost:9000/pages/login.php?success=false');
+    }
   }
   else{
     header('Location: http://localhost:9000/pages/login.php?success=false');
 }
-?>
-  
-

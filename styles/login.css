@@ -8,6 +8,12 @@ form > p:last-child{
     justify-content: center;
 }
 
+.error-msg{
+    text-align: center;
+    margin-top: 2em;
+    color: red;
+}
+
 #form_login {
     left      : 50%;
     top       : 50%;
