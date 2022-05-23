@@ -5,11 +5,11 @@
 
 int main() {
     Database d;
-    d.generateUsers(30);
-    d.generateRestaurants(30);
-    d.generateDishes(60);
-    d.generateRestaurantOwners(30);
-    d.generateDishOrder(30);
+    d.generateUsers(60);
+    d.generateRestaurants(200);
+    d.generateDishes(500);
+    d.generateRestaurantOwners(60);
+    d.generateDishOrder(100);
     d.generateReviews(30);
     d.pushToFile("populate");
     return 0;

@@ -1,24 +1,27 @@
-<?php function drawImage(int $id) {
+<?php function drawImage(string $type, int $id) {
   $db = getDatabaseConnection();
 
-  $stmt = $db->prepare("SELECT * FROM images WHERE id = ?");
-  $stmt->execute(array($id));
+  $stmt = $db->prepare("SELECT * FROM ? WHERE ? = ?");
+  if($type == 'dish') $column = 'photo';
+  else if($type == 'user') $column = 'avatar';
+  else $column = 'logo';
+  $stmt->execute(array($type, $column, $id));
   
   $image = $stmt->fetch();
 ?>
     <article class="image single">
-      <header><h2><?=$image['title']?></h2></header>
-      <a href="images/originals/<?=$image['id']?>.jpg">
-        <img src="images/thumbs_medium/<?=$image['id']?>.jpg">
+      <a href="../images/<?=$type?>/<?=$image[$column]?>.jpg">
+        <img src="../images/<?=$type?>/<?=$image[$column]?>.jpg">
       </a>
     </article>
 <?php }?>
 
 
 <?php function drawUploadImage() {
+  /*
   $db = getDatabaseConnection();
 
-  $stmt = $db->prepare("SELECT * FROM images ORDER BY id DESC");
+  $stmt = $db->prepare("SELECT * FROM Img ORDER BY idImage DESC");
   $stmt->execute();
   
   $images = $stmt->fetchAll();
@@ -42,4 +45,4 @@
       </article>
       <?php } ?>
     </section>
-<?php }?>
+<?php */}  ?>
