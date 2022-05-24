@@ -10,10 +10,10 @@ require_once(__DIR__. '/../database/connection.db.php');
 
 $db = getDatabaseConnection();
 
-$dish = 1;
-$stmt = $db->prepare('Select photo from Dish where idDish = ?');
+$dish = 3;
+$stmt = $db->prepare('Select * from Dish where idDish = ?');
 $stmt->execute(array($dish));
-$image = $stmt->fetch();
+$image = $stmt->fetch()['photo'];
 
 drawHeader();
 ?>
@@ -23,8 +23,8 @@ drawHeader();
     </head>
     <body>
         <nav>
-            <form action="../actions/action_upload_image_dish.php" method="post">
-                <input type="hidden" name="dish" value="<?php echo($dish)?>">
+            <form action="../actions/action_upload_image_dish.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="dish" value="<?=$dish?>">
                 <input type="file" name="image">
                 <input type="submit" value="Upload">
             </form>

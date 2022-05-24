@@ -10,8 +10,8 @@
   $image = $stmt->fetch();
 ?>
     <article class="image single">
-      <a href="../images/<?=$type?>/<?=$image[$column]?>.jpg">
-        <img src="../images/<?=$type?>/<?=$image[$column]?>.jpg">
+      <a href="../images/<?=$type?>es/<?=$image[$column]?>.jpg">
+        <img src="../images/<?=$type?>es/<?=$image[$column]?>.jpg">
       </a>
     </article>
 <?php }?>

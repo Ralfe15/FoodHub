@@ -13,7 +13,7 @@
       $photo = 0;
   }
   else{
-    $files = scandir('../images/dishes', SCANDIR_SORT_DESCENDING);
+    $files = scandir(__DIR__ . '/../images/dishes', SCANDIR_SORT_DESCENDING);
     $photo = intval($files[0]) + 1;   
   }
   
@@ -23,7 +23,6 @@
   $fileName = "../images/dishes/" . $photo . ".jpg";
 
   move_uploaded_file($_FILES['image']['tmp_name'], $fileName);
-  die();
 
-  header('Location: http://localhost:9000/pages/index.php');
+  header('Location: http://localhost:9000/pages/upload_image_dish.php?dish='.$dish);
 ?>

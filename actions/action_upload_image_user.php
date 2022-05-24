@@ -13,17 +13,16 @@
       $avatar = 0;
   }
   else{
-    $files = scandir('../images/users', SCANDIR_SORT_DESCENDING);
+    $files = scandir(__DIR__ . '/../images/users', SCANDIR_SORT_DESCENDING);
     $avatar = intval($files[0]) + 1;   
   }
   
-  $stmt = $db->prepare("UPDATE User SET avatar = ? WHERE idUser = ?");
+  $stmt = $db->prepare("UPDATE user SET avatar = ? WHERE iduser = ?");
   $stmt->execute(array($avatar, $user));
 
   $fileName = "../images/users/" . $avatar . ".jpg";
 
   move_uploaded_file($_FILES['image']['tmp_name'], $fileName);
-  die();
 
-  header('Location: http://localhost:9000/pages/index.php?');
+  header('Location: http://localhost:9000/pages/index.php');
 ?>

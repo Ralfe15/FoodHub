@@ -13,17 +13,16 @@
       $logo = 0;
   }
   else{
-    $files = scandir('../images/restaurants', SCANDIR_SORT_DESCENDING);
+    $files = scandir(__DIR__ . '/../images/restaurants', SCANDIR_SORT_DESCENDING);
     $logo = intval($files[0]) + 1;   
   }
   
-  $stmt = $db->prepare("UPDATE Restaurant SET logo = ? WHERE idRestaurant = ?");
+  $stmt = $db->prepare("UPDATE restaurant SET logo = ? WHERE idRestaurant = ?");
   $stmt->execute(array($logo, $restaurant));
 
   $fileName = "../images/restaurants/" . $logo . ".jpg";
 
   move_uploaded_file($_FILES['image']['tmp_name'], $fileName);
-  die();
 
-  header('Location: http://localhost:9000/pages/index.php?');
+  header('Location: http://localhost:9000/pages/index.php');
 ?>
