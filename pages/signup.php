@@ -41,7 +41,7 @@ drawHeader();
         <?php 
     if(isset($_GET['success'])){
         if($_GET['success'] == 'false')
-        ?>
+        ?>  
     <p class="error-msg">Email address already in use!</p>
     <?php
     }
