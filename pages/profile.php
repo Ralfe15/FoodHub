@@ -23,8 +23,8 @@ if(isset($prices)){
     $minprice = $prices[0];
 }
 else{$minprice = 0;}
-$searched_dish = "%{$_GET['dish']}%";
 if(isset($searched_dish)){
+    $searched_dish = "%{$_GET['dish']}%";
     $stmt = $db->prepare('Select * from Dish where idRestaurant = ? AND name LIKE ?');
     $stmt->execute(array($res, $searched_dish));
     $dishes = $stmt->fetchAll();

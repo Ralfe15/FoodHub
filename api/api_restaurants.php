@@ -15,3 +15,4 @@
       case 'address': $restaurants = getRestaurantsByAddress($db, $search, 8); echo json_encode($restaurants); die();
       default: $restaurants = []; echo json_encode($restaurants); die();
   }
+  

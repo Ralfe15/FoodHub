@@ -17,7 +17,6 @@
             ?>
         </div>
     </header>
-
 <?php }?>
 
 <?php function drawFooter() { ?>
@@ -53,8 +52,10 @@
 <?php }?>
 
 <?php function drawLogoutOptions(string $name) { ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div id="register">
         <a href="/../actions/action_logout.php" id="signup">Log out</a>
         <a href="/../pages/user_profile.php" id="login"><?=$name?></a>
+        <a href="" id="cart"><i style="font-size:larger"class="fa fa-shopping-cart"></i></a>
     </div>
 <?php }?>
