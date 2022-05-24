@@ -32,7 +32,7 @@ $result2 = $stmt->fetchAll();
     <form action="../actions/action_update_profile.php" method="post">
         <?php
         unset($result[0]['idUser']); //we dont want do display this
-        unset($result[0]['password']);
+        unset($result[0]['password']);//we dont want do display this
         foreach ($result[0] as $field => $value) {
             switch ($field) {
                 case 'name':

@@ -19,13 +19,16 @@ if (!isset($_SESSION['id'])) header('Location: http://localhost:9000/pages/login
 <div class="form-login">
     <form action="../actions/action_update_password.php" method="post" id="form_login">
         <p>
-            <input type="password" required name="prevPass" placeholder="Previous password" />
+            <input id="password" type="password" required name="prevPass" placeholder="Previous password" />
+            <button type="button" id='toggle' onclick="togglePassword('password')"><i class="fa fa-eye"></i></button>
         </p>
         <p>
-            <input type="password" required name="newPass" placeholder="New password" />
+            <input id="newPass" type="password" required name="newPass" placeholder="New password" />
+            <button type="button" id='toggle' onclick="togglePassword('newPass')"><i class="fa fa-eye"></i></button>
         </p>
         <p>
-            <input type="password" required name="newPassConfirm" placeholder="New password" />
+            <input id="newPassConfirm"type="password" required name="newPassConfirm" placeholder="New password" />
+            <button type="button" id='toggle' onclick="togglePassword('newPassConfirm')"><i class="fa fa-eye"></i></button>
         </p>
         <button type="submit">Update password</button>
     </form>
