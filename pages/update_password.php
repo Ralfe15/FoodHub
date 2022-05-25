@@ -10,14 +10,15 @@ if (!isset($_SESSION['id'])) header('Location: http://localhost:9000/pages/login
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../styles/login.css">
+<link rel="stylesheet" href="../styles/common.css">
 
 <script src="/../javascript/update_profile_script.js"></script>
 
 <div class="title">
     <h1>Edit password:</h1>
 </div>
-<div class="form-login">
-    <form action="../actions/action_update_password.php" method="post" id="form_login">
+<div class="form">
+    <form action="../actions/action_update_password.php" method="post">
         <p>
             <input id="password" type="password" required name="prevPass" placeholder="Previous password" />
             <button type="button" id='toggle' onclick="togglePassword('password')"><i class="fa fa-eye"></i></button>

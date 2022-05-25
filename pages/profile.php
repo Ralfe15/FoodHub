@@ -29,7 +29,15 @@ if(isset($searched_dish)){
     $stmt->execute(array($res, $searched_dish));
     $dishes = $stmt->fetchAll();
 }
-
+$stmt = $db->prepare('Select * from Restaurant_owner where idRestaurant = ?');
+$stmt->execute(array($res));
+$owners = $stmt->fetchAll();
+$isowner = false;
+foreach($owners as $owner){
+    if($_SESSION['id'] == $owner['idUser']){
+        $isowner = true;
+    }
+}
 ?>
 <?php 
     require_once(__DIR__ . '/../templates/common.tpl.php');
@@ -40,6 +48,7 @@ if(isset($searched_dish)){
 <html>
     <head>
         <link rel="stylesheet" href="../styles/style-profile.css">
+        <link rel="stylesheet" href="../styles/common.css">
     </head>
     <body>
         <div class="container">
@@ -66,7 +75,13 @@ if(isset($searched_dish)){
                     $dish['category']
                     );
                 } ?>
+                
             </section>
+            <?php if($isowner) { ?>
+                <div class="form">
+                    <a class="central-button" href='../pages/edit_restaurant.php'>Edit Restaurant</a>
+                </div>
+            <?php } ?>
         </div>
     </body>
 </html>

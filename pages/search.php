@@ -26,7 +26,7 @@ $results = $stmt->fetchAll();
             </form>
         </div>
         <main>
-            <section id="results-grid">
+            <section class="results-grid">
                 <?php
                 foreach($results as $restaurant)
                 {

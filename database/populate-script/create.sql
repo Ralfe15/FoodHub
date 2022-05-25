@@ -37,7 +37,7 @@ CREATE TABLE Review(
 );
 
 CREATE TABLE Dish(
-    idDish integer PRIMARY KEY,
+    idDish integer PRIMARY KEY AUTOINCREMENT,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
     name varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
@@ -46,14 +46,14 @@ CREATE TABLE Dish(
 );
 
 CREATE TABLE Dish_order(
-    idDish_order integer PRIMARY KEY,
+    idDish_order integer PRIMARY KEY AUTOINCREMENT,
     idDish number NOT NULL REFERENCES Dish(idDish),
     idUser number NOT NULL REFERENCES User(idUser),
     state varchar(50) NOT NULL
 );
 
 CREATE TABLE Restaurant_owner(
-    idRestaurant_owner integer PRIMARY KEY,
+    idRestaurant_owner integer PRIMARY KEY AUTOINCREMENT,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
     idUser number NOT NULL REFERENCES User(idUser)
 );

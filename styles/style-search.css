@@ -9,18 +9,3 @@
     border:none;
     background-color: lightgray;
 }
-
-#results-grid
-{
-    display: flex;  
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-#results-grid > a
-{
-    margin: 2em;
-    flex-shrink: 0;
-    background-color: lightgray;
-    width: 20%;
-}

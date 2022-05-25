@@ -23,12 +23,13 @@ $result2 = $stmt->fetchAll();*/
 
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../styles/common.css">
 <link rel="stylesheet" href="../styles/login.css">
 
 <script src="/../javascript/update_profile_script.js"></script>
 
 <h1 style="text-align: center;">Edit profile </h1>
-<div class="form-login">
+<div class="form">
     <form action="../actions/action_update_profile.php" method="post">
         <?php
         unset($result[0]['idUser']); //we dont want do display this

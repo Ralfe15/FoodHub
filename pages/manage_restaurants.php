@@ -1,29 +1,28 @@
 <?php
+declare(strict_types = 1);
+
 session_start();
+require_once(__DIR__ . '/../database/connection.db.php');
 require_once(__DIR__ . '/../templates/common.tpl.php');
 
-/*
-$res=1;
-$stmt = $db->prepare('Select * from Restaurant where name idRestaurant = (select idRestaurant from Restaurant_owner where idUser = ?)');
-$stmt->execute(array($res));
+$db = getDatabaseConnection();
+
+$stmt = $db->prepare('Select * from Restaurant where idRestaurant in (select idRestaurant from Restaurant_owner where idUser = ?)');
+$stmt->execute(array($_SESSION['id']));
 $results = $stmt->fetchAll();
-*/
+
 
 drawHeader();
 ?>
 <html lang="en-US">
     <head>
-        <link rel="stylesheet" href="../styles/style-search.css">
+        <link rel="stylesheet" href="../styles/common.css">
         <link rel="stylesheet" href="../styles/login.css">
     </head>
     <body>
         <main>
-            <section id="results-grid">
-                <div class="form-login">
-                    <a class="fcc-btn" href='../pages/add_restaurant.php'>Add New Restaurant</a>
-                </div>
+            <section class="results-grid">
                 <?php
-                /*
                 foreach($results as $restaurant)
                 {
                 ?>
@@ -36,8 +35,12 @@ drawHeader();
                         </article>
                     </a>
                 <?php }
-                */?>
+                ?>
+                
             </section>
+            <div class="form">
+                    <a class="fcc-btn" href='../pages/add_restaurant.php'>Add New Restaurant</a>
+            </div>
         </main>
     </body>
 </html>
