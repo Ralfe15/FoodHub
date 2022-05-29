@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1); ?>
+<?php declare(strict_types = 1);?>
 <?php function drawHeader() { ?> 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -51,11 +51,23 @@
     </div>
 <?php }?>
 
+<?php function drawCartSidenav() { ?>
+    <script src='../javascript/sidenav.js'></script>
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <p>Your cart:</p>
+    <div class="cartItems">
+    </div>
+    </div>
+<?php } ?>
+
 <?php function drawLogoutOptions(string $name) { ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?=drawCartSidenav()?> 
     <div id="register">
-        <a href="/../actions/action_logout.php" id="signup">Log out</a>
+        <a href="/../actions/action_logout.php" onclick="clearSession()" id="signup">Log out</a>
         <a href="/../pages/user_profile.php" id="login"><?=$name?></a>
-        <a href="" id="cart"><i style="font-size:larger"class="fa fa-shopping-cart"></i></a>
+        <a onclick="openNav()" id="cart"><i style="font-size:larger"class="fa fa-shopping-cart"></i></a>
     </div>
 <?php }?>

@@ -16,7 +16,7 @@ drawHeader();
 <div class="form">
     <form action="../actions/action_login.php" method="post">
         <p>
-            <input type="text" required name="email" placeholder="username" />
+            <input type="text" required name="email" placeholder="email" />
         </p>
         <p>
             <input type="password" required name="password" placeholder="password" />

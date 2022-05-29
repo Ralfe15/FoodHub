@@ -23,8 +23,10 @@ if(isset($prices)){
     $minprice = $prices[0];
 }
 else{$minprice = 0;}
-$searched_dish = "%{$_GET['dish']}%";
-if(isset($searched_dish)){
+
+
+if(isset($_GET['dish'])){
+    $searched_dish = "%{$_GET['dish']}%";
     $stmt = $db->prepare('Select * from Dish where idRestaurant = ? AND name LIKE ?');
     $stmt->execute(array($res, $searched_dish));
     $dishes = $stmt->fetchAll();
@@ -32,12 +34,15 @@ if(isset($searched_dish)){
 $stmt = $db->prepare('Select * from Restaurant_owner where idRestaurant = ?');
 $stmt->execute(array($res));
 $owners = $stmt->fetchAll();
-$isowner = false;
-foreach($owners as $owner){
-    if($_SESSION['id'] == $owner['idUser']){
-        $isowner = true;
+if(isset($_SESSION['id'])){
+    $isowner = false;
+    foreach($owners as $owner){
+        if($_SESSION['id'] == $owner['idUser']){
+            $isowner = true;
+        }
     }
 }
+
 ?>
 <?php 
     require_once(__DIR__ . '/../templates/common.tpl.php');
@@ -72,16 +77,20 @@ foreach($owners as $owner){
                     "https://picsum.photos/400/200?business/1", //$dish['photo'],
                     $dish['name'], 
                     $dish['price'],
-                    $dish['category']
+                    $dish['category'],
+                    $dish
                     );
                 } ?>
                 
             </section>
-            <?php if($isowner) { ?>
+            <?php 
+                if(isset($_SESSION['id'])){
+                if($isowner) { ?>
                 <div class="form">
                     <a class="central-button" href='../pages/edit_restaurant.php'>Edit Restaurant</a>
                 </div>
-            <?php } ?>
+            <?php } 
+        }?>
         </div>
     </body>
 </html>
