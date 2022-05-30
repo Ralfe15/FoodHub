@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/Database.cpp
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/populate-script/Database.cpp
 Database.h
-/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/Database.h
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/populate-script/Database.h
 iostream
 -
 fstream
@@ -18,7 +18,7 @@ cstdlib
 ctime
 -
 
-/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/Database.h
+C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/populate-script/Database.h
 string
 -
 vector

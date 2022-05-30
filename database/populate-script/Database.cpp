@@ -55,7 +55,7 @@ CREATE TABLE User(
         string tempEmail = emails[rand()%emails.size()];
 
 
-        tempStr += (tempName + "', " + "\'"+tempEmail+"\'" + ", " + tempPhone + ", '" + tempAddress + "', '" + tempPassword+"');");
+        tempStr += (tempName + "', " + "\'"+tempEmail+"\'" + ", " + tempPhone + ", '" + tempAddress + "', '" + tempPassword+"', NULL);");
         users.push_back(tempStr);
     }
     return 0;
@@ -64,7 +64,6 @@ CREATE TABLE User(
 int Database::generateRestaurants(int n) {
     readFile("restaurants", restaurantNames);
     readFile("categories", categories);
-    readFile("passwords", logos); //TODO passwords is only placeholder - shall later be changed to actual image names;
     if(cities.empty()){
         readFile("cities", cities);
     }
@@ -88,9 +87,8 @@ CREATE TABLE Restaurant(
         string tempName = restaurantNames[rand()%restaurantNames.size()];
         string tempCat = categories[rand()%categories.size()];
         string tempAddress = to_string(rand()%1000) + ", " + streets[rand()%streets.size()] + " - " + cities[rand()%cities.size()];
-        string tempLogo = logos[rand()%logos.size()];
 
-        tempStr += (tempName + "', '" + tempCat + "', '" + tempAddress + "', '" + tempLogo +"');");
+        tempStr += (tempName + "', '" + tempCat + "', '" + tempAddress + "', NULL);");
         restaurants.push_back(tempStr);
     }
     return 0;
@@ -100,7 +98,6 @@ int Database::generateDishes(int n) {
     if(restaurants.empty())
         return 1;
     readFile("dishNames", dishNames);
-    readFile("passwords", photos); //TODO passwords is only placeholder - shall later be changed to actual photo names
 /*
 CREATE TABLE Dish(
     idDish number UNIQUE NOT NULL,
@@ -117,11 +114,10 @@ CREATE TABLE Dish(
         string tempRestaurantId = to_string(rand()%restaurants.size());
         string tempDishName = dishNames[rand()%dishNames.size()];
         string tempPrice = to_string(1+ rand()%40);
-        string tempPhoto = photos[rand()%photos.size()];
         string tempCat = categories[rand()%categories.size()];
         //TODO DishCategories != RestaurantCategories. Decide on what the dish categories are and create new dishCategories file
 
-        tempStr += (tempRestaurantId + ", '" + tempDishName + "', " + tempPrice + ", '" + tempPhoto + "', '" + tempCat + "');");
+        tempStr += (tempRestaurantId + ", '" + tempDishName + "', " + tempPrice + ", '"  + tempCat + "', NULL);");
         dishes.push_back(tempStr);
     }
     return 0;
@@ -205,7 +201,7 @@ CREATE TABLE Review(
 
 void Database::pushToFile(string filename){
     ofstream file;
-    file.open (filename + ".sql");
+    file.open ("../" + filename + ".sql");
     file << "PRAGMA foreign_keys=ON;\nBEGIN TRANSACTION;\n\n";
 
     for(string user : users){

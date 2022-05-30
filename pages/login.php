@@ -6,16 +6,17 @@ drawHeader();
 ?>
 <html>
     <head>
+        <link rel="stylesheet" href="../styles/common.css">
         <link rel="stylesheet" href="../styles/login.css">
     </head>
     <body>
 <div class="title">
     <h1>Login page</h1>
 </div>
-<div class="form-login">
-    <form action="../actions/action_login.php" method="post" id="form_login">
+<div class="form">
+    <form action="../actions/action_login.php" method="post">
         <p>
-            <input type="text" required name="email" placeholder="username" />
+            <input type="text" required name="email" placeholder="email" />
         </p>
         <p>
             <input type="password" required name="password" placeholder="password" />

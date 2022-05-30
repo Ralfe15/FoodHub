@@ -64,7 +64,7 @@ Hinton
 Marsh
 Hewitt
 Branch
-O\'Brien
+O''Brien
 Case
 Christensen
 Parks
@@ -135,7 +135,7 @@ Hanna
 Locklear
 Holloway
 Glover
-O\'Donnell
+O''Donnell
 Goldman
 McKenna
 Starr
@@ -310,7 +310,7 @@ Ritchie
 Odom
 Pearce
 Rosenberg
-O\'Connor
+O''Connor
 Cates
 McIntosh
 Olson
@@ -336,7 +336,7 @@ Lynn
 Albright
 Alston
 Burnette
-O\'Neal
+O''Neal
 Morris
 Callahan
 Conway
@@ -541,7 +541,7 @@ Townsend
 Lin
 Long
 Norton
-O\'Connell
+O''Connell
 Lawson
 Hansen
 Berman
@@ -665,7 +665,7 @@ Peters
 Roberson
 Bass
 Shea
-O\'Neill
+O''Neill
 Murray
 Ramsey
 Pollock

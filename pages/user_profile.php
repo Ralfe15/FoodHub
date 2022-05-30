@@ -16,23 +16,24 @@ $id = $_SESSION['id'];
 $stmt = $db->prepare('Select * from user where idUser = ?');
 $stmt->execute(array($id));
 $result = $stmt->fetchAll();
-$stmt = $db->prepare('Select * from restaurant_owner where idUser = ?');
+/*$stmt = $db->prepare('Select * from restaurant_owner where idUser = ?');
 $stmt->execute(array($id));
-$result2 = $stmt->fetchAll();
+$result2 = $stmt->fetchAll();*/
 
 
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../styles/common.css">
 <link rel="stylesheet" href="../styles/login.css">
 
 <script src="/../javascript/update_profile_script.js"></script>
 
 <h1 style="text-align: center;">Edit profile </h1>
-<div class="form-login">
+<div class="form">
     <form action="../actions/action_update_profile.php" method="post">
         <?php
         unset($result[0]['idUser']); //we dont want do display this
-        unset($result[0]['password']);
+        unset($result[0]['password']);//we dont want do display this
         foreach ($result[0] as $field => $value) {
             switch ($field) {
                 case 'name':
@@ -71,12 +72,6 @@ $result2 = $stmt->fetchAll();
 <div class="form-login">
     <a class="fcc-btn" href='../pages/update_password.php'>Change password</a>
 </div>
-<?php
-if ($result2) {
-?>
-    <div class="form-login">
-        <a class="fcc-btn" href='../pages/update_restaurant.php'>Edit restaurant</a>
-    </div>
-<?php
-}
-?>
+<div class="form-login">
+    <a class="fcc-btn" href='../pages/manage_restaurants.php'>Manage Restaurants</a>
+</div>

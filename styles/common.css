@@ -31,7 +31,7 @@ body>header {
     margin: 1em;
 }
 
-#signup, #login{
+#signup, #login, #cart{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-left: 1em;
@@ -100,3 +100,80 @@ footer {
     right: 0.2em;
     flex-grow: 1;
 }
+
+.form{
+    text-align: center;
+    display: block;
+}
+
+.central-button{
+    background-color: lightgray;
+    color: black;
+    border-radius: 0.5em;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.results-grid
+{
+    display: flex;  
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.results-grid > a
+{
+    margin: 2em;
+    flex-shrink: 0;
+    background-color: lightgray;
+    width: 20%;
+}
+
+/* Sidenav stuff */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+  }
+  
+  .sidenav p, .sidenav a {
+    padding: 8px 8px 8px 32px;
+    margin-top: 0px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  /* End of sidenav stuff */
+
+  .fcc-btn {
+    background-color: lightgray;
+    color: black;
+    border-radius: 0.5em;
+    padding: 10px 15px;
+    text-decoration: none;
+  }
