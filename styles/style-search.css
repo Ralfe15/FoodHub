@@ -1,8 +1,10 @@
 #search > input{
     box-sizing:border-box;
-    margin-left: 0.5em;
+    margin-left: 2.5em;
     margin-right:1em;
-    width: 80%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
     height: 3em;
     border-radius: 1em;
     padding: 1em;
@@ -10,17 +12,47 @@
     background-color: lightgray;
 }
 
+.search-button
+{
+    display: flex;
+    justify-content: initial;
+}
+
 #results-grid
 {
     display: flex;  
     flex-wrap: wrap;
     width: 100%;
+    justify-content:space-evenly;
 }
 
 #results-grid > a
 {
+    
+    border: none;
+    border-radius: 1em;
     margin: 2em;
     flex-shrink: 0;
     background-color: lightgray;
     width: 20%;
+    height:fit-content;
 }
+
+#results-grid a article
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#results-grid a article > img
+{
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+
+
+
+

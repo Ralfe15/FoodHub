@@ -21,7 +21,7 @@ $results = $stmt->fetchAll();
     <body>
         <div id="search-div">
             <form action="/../pages/search.php" id="search" method = "POST">
-                <input type="text" placeholder="Search.." name="search">
+                <input type="text" placeholder="Showing results for: <?= $_POST['search'];?>" name="search">
                 <button type="submit" class="search-button"><i></i>&#x276F</button>
             </form>
         </div>
