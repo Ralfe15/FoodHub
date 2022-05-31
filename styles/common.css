@@ -210,6 +210,8 @@ footer {
     .cartItems{
         padding-top: 20px;
         list-style: none;
+        display: flex;
+        flex-direction: column;
     }
 
     .cartItems li {
@@ -219,7 +221,8 @@ footer {
     .cartItems img {
         float: left;
         margin-right: 12px;
-        size: 15px
+        width: 80px;
+        border-radius: 1em;
       }
 
       .item-name {
@@ -230,7 +233,7 @@ footer {
       }
       
       .item-price {
-        color: blue;
+        color: green;
         margin-right: 8px;
       }
       
