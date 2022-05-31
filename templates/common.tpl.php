@@ -77,7 +77,7 @@ declare(strict_types=1); ?>
             <ul class="cartItems">
 
             </ul>
-            <a class="checkout-button" href="">Checkout</a>
+            <a class="checkout-button" onclick="checkout()">Checkout</a>
         </div>
     <?php } ?>
 

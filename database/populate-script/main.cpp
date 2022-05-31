@@ -9,7 +9,7 @@ int main() {
     d.generateRestaurants(200);
     d.generateDishes(500);
     d.generateRestaurantOwners(60);
-    d.generateDishOrder(100);
+    //d.generateDishOrder(100);
     d.generateReviews(30);
     d.pushToFile("populate");
     return 0;

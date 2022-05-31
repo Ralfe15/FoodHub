@@ -64,25 +64,24 @@ function closeNav() {
 
 function addToCart(dish) { //dish is a json encoded dish with id, price, ...
   const keys = Object.keys(window.sessionStorage);
-  if(keys.length == 0 || JSON.parse(keys[0]).idRestaurant == dish.idRestaurant){
-  const key = JSON.stringify(dish)
-  if (window.sessionStorage.getItem(key) == null) {
-    window.sessionStorage.setItem(key, "1");
-    assembleCartItem(dish, 1)
+  if (keys.length == 0 || JSON.parse(keys[0]).idRestaurant == dish.idRestaurant) {
+    const key = JSON.stringify(dish)
+    if (window.sessionStorage.getItem(key) == null) {
+      window.sessionStorage.setItem(key, "1");
+      assembleCartItem(dish, 1)
+    }
+    else {
+      window.sessionStorage.setItem(key, parseInt(window.sessionStorage.getItem(key)) + 1)
+      const ammount = document.querySelector('#' + dish.name);
+      if (ammount)
+        ammount.textContent = "X " + window.sessionStorage.getItem(key);
+    }
+    openNav();
   }
   else {
-    window.sessionStorage.setItem(key, parseInt(window.sessionStorage.getItem(key)) + 1)
-    const ammount = document.querySelector('#' + dish.name);
-    if(ammount)
-      ammount.textContent = "X " + window.sessionStorage.getItem(key);
+    alert("You can only chose 1 restaurant per order!"); //TODO: fazer isso ser mais bonito
   }
-  openNav();
 }
-else{
-  alert("You can only chose 1 restaurant per order!"); //TODO: fazer isso ser mais bonito
-}
-}
-
 
 function removeFromCart(dish) {
   const key = JSON.stringify(dish);
@@ -101,4 +100,23 @@ function capitalizeFirstLetter(string) {
 
 function clearSession() {
   window.sessionStorage.clear();
+}
+
+async function checkout(){
+  const keys = Object.keys(window.sessionStorage);
+  var rawBody = {}
+  for(var i = 0; i<keys.length; i++){
+    var prevDish = JSON.parse(keys[i]);
+    prevDish["quantity"] = window.sessionStorage.getItem(keys[i]);
+    rawBody[i] = prevDish;
+  }
+  // console.log(rawBody);
+  const response = await fetch('../actions/action_checkout.php', {
+    method: "POST",
+    headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+    body: JSON.stringify(rawBody),
+});
+  const responseText = await response.text();
+  console.log(responseText); // logs 'OK'
+
 }

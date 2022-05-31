@@ -8,7 +8,9 @@ DROP TABLE IF EXISTS Review;
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS Dish;
 DROP TABLE IF EXISTS Dish_order;
+DROP TABLE IF EXISTS User_order;
 DROP TABLE IF EXISTS Restaurant_owner;
+
 
 CREATE TABLE User(
     idUser integer PRIMARY KEY AUTOINCREMENT,
@@ -46,10 +48,15 @@ CREATE TABLE Dish(
 );
 
 CREATE TABLE Dish_order(
-    idDish_order integer PRIMARY KEY AUTOINCREMENT,
+    idOrder varchar(50) NOT NULL REFERENCES User_order(idOrder),
     idDish number NOT NULL REFERENCES Dish(idDish),
+    ammount number NOT NULL
+);
+
+CREATE TABLE User_order(
     idUser number NOT NULL REFERENCES User(idUser),
-    state varchar(50) NOT NULL
+    idOrder varchar(50) NOT NULL,
+    status varchar(50) NOT NULL
 );
 
 CREATE TABLE Restaurant_owner(

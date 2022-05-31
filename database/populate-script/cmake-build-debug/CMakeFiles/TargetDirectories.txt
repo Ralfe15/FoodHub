@@ -1,3 +1,3 @@
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/populate-script/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/populate-script/cmake-build-debug/CMakeFiles/untitled.dir
-C:/Users/igcbs/Desktop/College/UPorto 2020-/Semestre 4/LTW/ltw-t09-g05/database/populate-script/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/cmake-build-debug/CMakeFiles/untitled.dir
