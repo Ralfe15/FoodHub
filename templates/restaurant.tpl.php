@@ -7,6 +7,8 @@
         <h2 class="dish"><?=ucfirst($name)?></h2>
         <h4 class="dish_category"><?=ucfirst($category)?></h5>
         <h3 class="dish_price"><?="$ ".strval($price).",00"?></h3>
-        <a class="fcc-btn" onclick='addToCart(<?=json_encode($dish);?>)'>Add to cart</a>
+        <?php if(isset($_SESSION['id'])){?>
+            <a class="fcc-btn" onclick='addToCart(<?=json_encode($dish);?>)'>Add to cart</a>
+        <?php }?>
     </article>
  <?php }?>

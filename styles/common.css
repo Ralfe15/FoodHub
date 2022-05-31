@@ -142,19 +142,27 @@ footer {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 30px;
+    
   }
   
-  .sidenav p, .sidenav a {
+  .sidenav h2, .sidenav a {
     padding: 8px 8px 8px 32px;
     margin-top: 0px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 35px;
     color: white;
     display: block;
     transition: 0.3s;
   }
   
-  
+  .sidenav p{
+    padding: 8px 8px 8px 8px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    color: white;
+    transition: 0.3s;
+  }
+
   .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -167,6 +175,68 @@ footer {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  .shopping-cart-header {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 15px;
+    margin-top: 2em;
+  }  
+    .shopping-cart-total {
+      float: right;
+      margin-right: 10px;
+      color:white
+    }
+
+    .cart-icon {
+        color: white;
+        font-size: 24px;
+        margin-right: 7px;
+        float: left;
+        margin-left: 10px;
+        margin-top: 3px;
+      }
+      .badge {
+        background-color: rgba(169, 169, 169, 0.713);
+        border-radius: 10px;
+        color: white;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1;
+        padding: 3px 7px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .cartItems{
+        padding-top: 20px;
+        list-style: none;
+    }
+
+    .cartItems li {
+        margin-bottom: 18px;
+    }
+    
+    .cartItems img {
+        float: left;
+        margin-right: 12px;
+        size: 15px
+      }
+
+      .item-name {
+        display: block;
+        padding-top: 10px;
+        font-size: 16px;
+        color:white;
+      }
+      
+      .item-price {
+        color: blue;
+        margin-right: 8px;
+      }
+      
+      .item-quantity {
+        color: white;
+      }
 
   /* End of sidenav stuff */
 

@@ -1,24 +1,40 @@
 function openNav() {
-    const itemsdiv = document.querySelector(".cartItems");
-    itemsdiv.innerHTML = '';
+    const badge = document.querySelector("#badge");
+    const total = document.querySelector("#total");
+    var total_val = 0;
     const keys = Object.keys(window.sessionStorage);
+    badge.textContent = keys.length;
     for(const key of keys){
-        const dish = JSON.parse(key);
+        const dish = JSON.parse(key); 
         const ammount = window.sessionStorage.getItem(key);
-        const article = document.createElement('article')
-        const name = document.createElement('p');
-        const ammountText = document.createElement('p');
-        name.textContent = dish.name;
-        ammountText.textContent = ammount;
-        article.appendChild(name);
-        article.appendChild(ammountText);
-        itemsdiv.appendChild(article);
+        total_val += parseInt(dish.price) * parseInt(ammount);
+        // assembleCartItem(dish, ammount);
     }
-
-
+    total.textContent = "$" +total_val+",00";
     document.getElementById("mySidenav").style.width = "350px";
   }
   
+  function assembleCartItem(dish, ammount){
+    const itemslist = document.querySelector(".cartItems");
+    const itemBox = document.createElement('li');
+    const img = document.createElement('img');
+    const name = document.createElement('span');
+    const price = document.createElement('span');
+    const quantity = document.createElement('span');
+    name.className = "item-name";
+    price.className = "item-price";
+    quantity.className = "item-quantity";
+    img.src = 'https://picsum.photos/200/200?business'
+    name.textContent = capitalizeFirstLetter(dish.name);
+    price.textContent = dish.price;
+    quantity.textContent = ammount;
+    itemBox.appendChild(img);
+    itemBox.appendChild(name);
+    itemBox.appendChild(price);
+    itemBox.appendChild(quantity);
+    itemslist.appendChild(itemBox);
+  }
+
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
@@ -27,11 +43,16 @@ function openNav() {
     const key = JSON.stringify(dish)
     if(window.sessionStorage.getItem(key) == null){
         window.sessionStorage.setItem(key, "1");
+        assembleCartItem(dish, 1);
     }
     else{
         window.sessionStorage.setItem(key, parseInt(window.sessionStorage.getItem(key))+1)
     }
     openNav();
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   function clearSession(){

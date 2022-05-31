@@ -55,10 +55,17 @@
     <script src='../javascript/sidenav.js'></script>
     <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-        <p>Your cart:</p>
-    <div class="cartItems">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i><span id="badge" class="badge"></span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text" id="total">$2,229.97</span>
+      </div>
     </div>
+    
+    <ul class="cartItems">
+        
+    </ul>
     </div>
 <?php } ?>
 
