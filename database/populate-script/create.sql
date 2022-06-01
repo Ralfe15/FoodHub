@@ -48,14 +48,17 @@ CREATE TABLE Dish(
 );
 
 CREATE TABLE Dish_order(
-    idOrder varchar(50) NOT NULL REFERENCES User_order(idOrder),
+    idOrder varchar(50) REFERENCES User_order(idOrder) ON DELETE CASCADE,
     idDish number NOT NULL REFERENCES Dish(idDish),
     ammount number NOT NULL
 );
 
 CREATE TABLE User_order(
     idUser number NOT NULL REFERENCES User(idUser),
-    idOrder varchar(50) NOT NULL,
+    idOrder varchar(50) PRIMARY KEY NOT NULL,
+    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
+    date varchar(50) NOT NULL,
+    total number NOT NULL,
     status varchar(50) NOT NULL
 );
 

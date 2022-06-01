@@ -58,9 +58,9 @@ $result2 = $stmt->fetchAll();*/
         ?>
             <p>
                 <label><?= ucfirst($field) ?>:</label>
-                <input type=<?= $type ?> required name="<?= $field ?>" value="<?= $value ?>" />
+                <input type=<?= $type ?> <?php echo ($field=='avatar')?'':'required';?> name="<?= $field ?>" value="<?= $value ?>" />
             </p>
-        <?php
+        <?php   
         }
         ?>
         <p>

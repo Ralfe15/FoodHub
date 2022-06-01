@@ -46,6 +46,14 @@ drawHeader();
     <?php
     }
     ?>
+    <?php 
+    if(isset($_GET['match'])){
+        if($_GET['match'] == 'false')
+        ?>  
+    <p class="error-msg">Passwords dont match</p>
+    <?php
+    }
+    ?>
     </body>
 </html>
 <?=drawFooter();?>

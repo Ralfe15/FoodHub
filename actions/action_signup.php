@@ -9,10 +9,14 @@
 
   $username = $_POST["email"];
   $password = $_POST["password"];
+  $password_confirm = $_POST["password-confirmation"];
   $name = $_POST["name"];
   $phone = $_POST["phone"];
   $address = $_POST["address"];
-
+  if($password != $password_confirm){
+    header('Location: http://localhost:9000/pages/signup.php?match=false');
+  }
+  else{
   if(checkCanCreate($username)){
   $stmt = $db->prepare('Insert into User (name, email, phone, address, password) VALUES (?, ?, ?, ?, ?)');
   $stmt -> execute(array($name, strtolower($username), $phone, $address, password_hash($password, PASSWORD_DEFAULT)));
@@ -20,4 +24,5 @@
   }
   else{
     header('Location: http://localhost:9000/pages/signup.php?success=false');
+  }
   }

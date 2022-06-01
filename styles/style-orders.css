@@ -1,0 +1,84 @@
+.wrapper{
+    margin: 2rem
+}
+
+table{
+    
+    line-height: 1.5;
+    text-align: left;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+    color: #212529;
+    margin: 0;
+    border: none;
+}
+
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+table tr{
+    border-bottom: solid 1px #eaeaea;
+}
+
+td a {
+    cursor: pointer;
+}
+
+.order{
+    padding-top: 0.5em;
+}
+
+table tr td .order-restaurant{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+table tr td .order-status{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    margin: 0;
+}
+
+table tr .date span {
+    line-height: 2;
+    font-size: 16px;
+}
+
+table tr .total span {
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+table tr:not(:first-child) td {
+    padding: 30px 0 !important;
+}
+
+table tr:first-child td {
+    padding: 0 0 30px 0 !important;
+    border-top: solid 1px #eaeaea;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.action-button a span{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}

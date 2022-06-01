@@ -102,21 +102,34 @@ function clearSession() {
   window.sessionStorage.clear();
 }
 
-async function checkout(){
+function checkout() {
+  const total = document.querySelector("#total").textContent;
   const keys = Object.keys(window.sessionStorage);
   var rawBody = {}
-  for(var i = 0; i<keys.length; i++){
+  for (var i = 0; i < keys.length; i++) {
     var prevDish = JSON.parse(keys[i]);
     prevDish["quantity"] = window.sessionStorage.getItem(keys[i]);
     rawBody[i] = prevDish;
   }
-  // console.log(rawBody);
-  const response = await fetch('../actions/action_checkout.php', {
+  rawBody['total'] = parseInt(total.substring(1, total.length-3));
+  console.log(rawBody);
+  fetch('../actions/action_checkout.php', {
     method: "POST",
-    headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+    headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },
     body: JSON.stringify(rawBody),
-});
-  const responseText = await response.text();
-  console.log(responseText); // logs 'OK'
+  }).then(response => response.json()
+  ).then((response) => {
+    if (response.success) {
+      window.sessionStorage.clear();
+      window.location.href = 'http://localhost:9000/pages/user_orders.php' //TODO: redirect to orders page
+    } else {
+      throw new Error(response.message);
+    }
+  });
+
+
+
+
+
 
 }
