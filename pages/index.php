@@ -19,6 +19,13 @@
                 <button type="submit" class="search-button"><i></i>&#x276F</button>
             </form>
         </div>
+        <?php if(isset($_SESSION['id'])) {?>
+        <div class="button-wrapper">
+            <a class="fcc-btn" href='../pages/user_orders.php'>Your orders</a>
+        </div>  
+        <?php
+    }
+    ?>
     </body>
 </html>
 <?php 

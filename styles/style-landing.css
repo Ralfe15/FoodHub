@@ -34,3 +34,8 @@
     border:none;
     background-color: lightgray;
 }
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}

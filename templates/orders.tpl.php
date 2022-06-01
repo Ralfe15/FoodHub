@@ -20,7 +20,9 @@ function drawOrderRow($order)
 
         <td class="action-button">
             <div class="button-wrapper">
-                <a href=''><span>write review</span></a>
+                <?php if($order['status']=='delivered') {?>
+                <a href='../pages/review.php?order=<?=$order['idOrder']?>'><span>write review</span></a>
+                <?php } ?>
             </div>
         </td>
 
