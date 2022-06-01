@@ -35,7 +35,8 @@ CREATE TABLE Review(
     review varchar(255),
     rating number,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
-    idUser number NOT NULL REFERENCES User(idUser)
+    idUser number NOT NULL REFERENCES User(idUser),
+    idOrder varchar(50) REFERENCES User_order(idOrder) ON DELETE CASCADE
 );
 
 CREATE TABLE Dish(

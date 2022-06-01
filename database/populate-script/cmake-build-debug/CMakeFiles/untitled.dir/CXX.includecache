@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/Database.cpp
-Database.h
-/Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/Database.h
-iostream
--
-fstream
--
-cstdlib
--
-ctime
--
-
 /Users/rafaelschmidt/Desktop/LTW_TP_Classes/ltw-t09-g05/database/populate-script/Database.h
 string
 -

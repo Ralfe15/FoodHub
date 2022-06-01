@@ -21,7 +21,7 @@ function drawOrderRow($order)
         <td class="action-button">
             <div class="button-wrapper">
                 <?php if($order['status']=='delivered') {?>
-                <a href='../pages/review.php?order=<?=$order['idOrder']?>'><span>write review</span></a>
+                <a href='../pages/review.php?order=<?=$order['idOrder'].'&user='.$order['idUser']?>'><span>write review</span></a>
                 <?php } ?>
             </div>
         </td>
@@ -29,4 +29,29 @@ function drawOrderRow($order)
     </tr>
 <?php
 }
+
+
+function drawReviewOrderRow($order)
+{ 
+    $total = intval($order['ammount']) * intval($order['price']);
+    ?>
+    <tr>
+        <td class="td-order">
+            <div class="order">
+                <span class="order-name"><?=ucfirst($order['name'])?></span>
+            </div>
+            <div class="total">
+                <span id='total' class="price">$<?=$order['price']?>,00 x <?=$order['ammount']?></span>
+            </div>
+        </td>
+        <td>
+        <div class="total">
+                <span class="price">$<?=$total?>,00</span>
+            </div>
+        </td>
+
+    </tr>
+<?php
+}
+
 ?>
