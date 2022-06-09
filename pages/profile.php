@@ -88,7 +88,9 @@ if(isset($_SESSION['id'])){
                 if($isowner) { ?>
                 <div class="form">
                     <a class="central-button" href='../pages/edit_restaurant.php'>Edit Restaurant</a>
+                    <a class="central-button" style='margin-left: 10px;' href='../pages/owner_orders.php?res=<?=$res?>'>Manage orders</a>
                 </div>
+
             <?php } 
         }?>
         </div>

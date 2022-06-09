@@ -6,6 +6,8 @@ session_start();
 
 require_once(__DIR__ . '/../templates/common.tpl.php');
 require_once(__DIR__ . '/../templates/orders.tpl.php');
+require_once(__DIR__ . '/../utils/sorting_utils.php');
+
 
 
 drawHeader();
@@ -27,6 +29,9 @@ $orders = array();
 foreach($result as $order){
     $orders[] = $order;
 }
+
+//sort orders (recent first)
+usort($orders, 'date_compare');
 
 
 ?>
