@@ -112,7 +112,6 @@ function checkout() {
     rawBody[i] = prevDish;
   }
   rawBody['total'] = parseInt(total.substring(1, total.length-3));
-  console.log(rawBody);
   fetch('../actions/action_checkout.php', {
     method: "POST",
     headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },

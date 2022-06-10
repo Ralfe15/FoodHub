@@ -39,6 +39,12 @@ CREATE TABLE Review(
     idOrder varchar(50) REFERENCES User_order(idOrder) ON DELETE CASCADE
 );
 
+CREATE TABLE Review_answer(
+    idReviewAnswer integer PRIMARY KEY AUTOINCREMENT,
+    answer varchar(255),
+    idOrder varchar(50) REFERENCES User_order(idOrder) ON DELETE CASCADE
+);
+
 CREATE TABLE Dish(
     idDish integer PRIMARY KEY AUTOINCREMENT,
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
