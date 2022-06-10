@@ -11,7 +11,6 @@
     border:none;
     background-color: lightgray;
 }
-<<<<<<< HEAD
 
 .search-button
 {
@@ -48,14 +47,6 @@
 
 #results-grid a article > img
 {
-
     grid-row-start: 1;
     grid-row-end: 3;
 }
-
-
-
-
-
-=======
->>>>>>> 5ccb8e676b8f36ff9b5f9d6d5f4c2b30d7d6801c
