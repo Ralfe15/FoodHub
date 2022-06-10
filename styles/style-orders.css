@@ -82,3 +82,17 @@ table tr:first-child td {
     color: #000;
     text-decoration: none;
 }
+
+.status-dropdown{
+    font-size: 18px;
+}
+
+.button-wrapper a {
+    margin-left: 20px;
+    border-radius: 0.5em;
+    background-color: lightgray;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
