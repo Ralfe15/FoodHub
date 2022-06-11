@@ -29,11 +29,11 @@ $result2 = $stmt->fetchAll();*/
 <script src="/../javascript/update_profile_script.js"></script>
 
 <h1 style="text-align: center;">Edit profile </h1>
-<div class="form">
+<div class="labeled-form">
     <form action="../actions/action_update_profile.php" method="post">
         <?php
-        unset($result[0]['idUser']); //we dont want do display this
-        unset($result[0]['password']);//we dont want do display this
+        unset($result[0]['idUser']);
+        unset($result[0]['password']);
         foreach ($result[0] as $field => $value) {
             switch ($field) {
                 case 'name':
@@ -64,7 +64,7 @@ $result2 = $stmt->fetchAll();*/
         }
         ?>
         <p>
-            <button type="submit">Edit profile</button>
+            <button type="submit">Save Changes</button>
         </p>
     </form>
 

@@ -24,23 +24,24 @@ drawHeader();
     <link rel="stylesheet" href="../styles/common.css">
 </head>
 <h1 style="text-align: center;">Edit Dish</h1>
-<div class="form">
+<div class="labeled-form">
     <form action="../actions/action_edit_dish.php" method="post" id="form_edit_restaurant" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?=$idDish?>">
         <input type="hidden" name="idRestaurant" value="<?=$result[0]['idRestaurant']?>">
         <p>
+            <label>Name:</label>
             <input type="text" name="name" placeholder="<?=$result[0]["name"]?>" />
         </p>
         <p>
-            <input type="text" name="price" placeholder="<?=$result[0]["price"]?>" />
-        </p>
-        <p>
+            <label>Category:</label>
             <input type="text" name="category" placeholder="<?=$result[0]["category"]?>" />
         </p>
         <p>
-            <label>Change Photo:</label>
+            <label>Price:</label>
+            <input type="text" name="price" placeholder="<?=$result[0]["price"]?>" />
         </p>
         <p>
+            <label>Photo:</label>
             <input type="file" name="image">
         </p>
         <p>

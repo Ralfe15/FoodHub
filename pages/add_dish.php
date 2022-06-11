@@ -26,15 +26,16 @@ drawHeader();
                 <input type="text" required name="name" placeholder="name" />
             </p>
             <p>
-                <input type="text" required name="price" placeholder="price" />
-            </p>
-            <p>
                 <input type="text" required name="category" placeholder="category" />
             </p>
             <p>
-                <label>Photo:</label>
+                <input type="text" required name="price" placeholder="price" />
             </p>
             <p>
+                
+            </p>
+            <p>
+                <label>Photo:</label>
                 <input type="file" name="image">
             </p>
             <p>

@@ -273,3 +273,25 @@ footer {
     margin-bottom: 10px;
     text-decoration: none;
   }
+
+  label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+  }
+
+  .labeled-form{
+    text-align: center;
+    display: block;
+}
+
+.labeled-form  input{
+  margin-right: 10em;
+}
+
+.management{
+  text-align: center;
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 7em;
+}

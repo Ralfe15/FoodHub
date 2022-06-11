@@ -17,8 +17,10 @@ drawHeader();
 ?>
 <html lang="en-US">
     <head>
+        <script src="/../javascript/favorites.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../styles/style-search.css">
         <link rel="stylesheet" href="../styles/common.css">
-        <link rel="stylesheet" href="../styles/login.css">
     </head>
     <body>
         <main>
@@ -29,8 +31,8 @@ drawHeader();
                     }
                 ?>
             </section>
-            <div class="form">
-                    <a class="fcc-btn" href='../pages/add_restaurant.php'>Add New Restaurant</a>
+            <div class="management">
+                    <a class="central-button" href='../pages/add_restaurant.php'>Add New Restaurant</a>
             </div>
         </main>
     </body>
