@@ -38,7 +38,7 @@ function assembleCartItem(dish, ammount) {
   img.src = 'https://picsum.photos/200/200?business'
 
   name.textContent = capitalizeFirstLetter(dish.name);
-  price.textContent = "$" + dish.price + ",00";
+  price.textContent = "$" + dish.price;
   quantity.textContent = "X " + ammount;
 
   quantity.id = dish.name;

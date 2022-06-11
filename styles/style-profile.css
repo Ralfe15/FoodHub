@@ -101,3 +101,10 @@ article{
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
+
+.management{
+    text-align: center;
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 7em;
+}

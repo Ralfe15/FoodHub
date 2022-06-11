@@ -4,6 +4,7 @@ declare(strict_types = 1);
 session_start();
 
 require_once(__DIR__. '/../database/connection.db.php');
+require_once(__DIR__ . '/../templates/restaurant.tpl.php');
 
 $db = getDatabaseConnection();
 
@@ -31,22 +32,11 @@ if(isset($_GET['dish'])){
     $stmt->execute(array($res, $searched_dish));
     $dishes = $stmt->fetchAll();
 }
-$stmt = $db->prepare('Select * from Restaurant_owner where idRestaurant = ?');
-$stmt->execute(array($res));
-$owners = $stmt->fetchAll();
-if(isset($_SESSION['id'])){
-    $isowner = false;
-    foreach($owners as $owner){
-        if($_SESSION['id'] == $owner['idUser']){
-            $isowner = true;
-        }
-    }
-}
+$isowner = isOwner($res);
 
 ?>
 <?php 
     require_once(__DIR__ . '/../templates/common.tpl.php');
-    require_once(__DIR__ . '/../templates/restaurant.tpl.php');
 
     drawHeader();
 ?>
@@ -59,7 +49,7 @@ if(isset($_SESSION['id'])){
         <div class="container">
                 <div class="profile">
                     <h1 id="title"><a href="../pages/profile.php?res=<?php echo($res)?>"><?php echo($result[0]["name"])?></a></h1>
-                    <a href="../pages/profile.php?res=<?php echo($res)?>" id="logo"><img src="https://picsum.photos/200/200?business"></a>
+                    <a href="../pages/profile.php?res=<?php echo($res)?>" id="logo"><img src=<?php echo("../images/restaurant/medium/". $result[0]['logo'] .".jpg")?>></a>
                     <h4 id="category"><?php echo($result[0]["category"])?></h4>
                     <h4 id="price"><?="From $$minprice,00"?></h4>
                     <h4 id="rating">5</h4>
@@ -73,26 +63,17 @@ if(isset($_SESSION['id'])){
             <section id="highlights">
                 <?php 
                 foreach($dishes as $dish) { 
-                    drawDish(
-                    "https://picsum.photos/400/200?business/1", //$dish['photo'],
-                    $dish['name'], 
-                    $dish['price'],
-                    $dish['category'],
-                    $dish
-                    );
+                    drawDish($dish);
                 } ?>
                 
             </section>
-            <?php 
-                if(isset($_SESSION['id'])){
-                if($isowner) { ?>
-                <div class="form">
-                    <a class="central-button" href='../pages/edit_restaurant.php'>Edit Restaurant</a>
+            <?php if($isowner) { ?>
+                <div class="management">
+                    <a class="central-button" href='../pages/edit_restaurant.php?res=<?=$res?>'>Edit Restaurant</a>
+                    <a class="central-button" style='margin-left: 10px;' href='../pages/add_dish.php?res=<?=$res?>'>Add Dishes</a>
                     <a class="central-button" style='margin-left: 10px;' href='../pages/owner_orders.php?res=<?=$res?>'>Manage orders</a>
                 </div>
-
-            <?php } 
-        }?>
+            <?php } ?>
         </div>
     </body>
 </html>

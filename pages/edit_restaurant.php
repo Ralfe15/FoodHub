@@ -1,0 +1,57 @@
+<?php
+declare(strict_types = 1);
+
+session_start();
+
+require_once(__DIR__. '/../database/connection.db.php');
+require_once(__DIR__ . '/../templates/common.tpl.php');
+require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+
+$res = $_GET['res'];
+$isowner = isOwner($res);
+if(!$isowner){
+    header('Location: http://localhost:9000/pages/index.php?');
+}
+$db = getDatabaseConnection();
+$stmt = $db->prepare('Select * from Restaurant where idRestaurant = ?');
+$stmt->execute(array($res));
+$result = $stmt->fetchAll();
+
+
+
+drawHeader();
+?>
+<head>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<h1 style="text-align: center;">Edit Restaurant</h1>
+<div class="form">
+    <form action="../actions/action_edit_restaurant.php" method="post" id="form_edit_restaurant" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?=$res?>">
+        <p>
+            <input type="text" name="name" placeholder="<?=$result[0]["name"]?>" />
+        </p>
+        <p>
+            <input type="text" name="category" placeholder="<?=$result[0]["category"]?>" />
+        </p>
+        <p>
+            <input type="text" name="address" placeholder="<?=$result[0]["address"]?>" />
+        </p>
+        <p>
+            <label>Change Logo:</label>
+        </p>
+        <p>
+            <input type="file" name="image" title="Logo:">
+        </p>
+        <p>
+            <button type="submit">Save</button>
+        </p>
+    </form>
+    <form action="../actions/action_delete_restaurant.php" method="post" id="form_edit_restaurant" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?=$res?>">
+        <p>
+            <button type="submit">Delete Restaurant</button>
+        </p>
+    </form>
+</div>
+<?=drawFooter();?>

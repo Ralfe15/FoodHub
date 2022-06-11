@@ -34,8 +34,8 @@ CREATE TABLE Review(
     idReview integer PRIMARY KEY AUTOINCREMENT,
     review varchar(255),
     rating number,
-    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
-    idUser number NOT NULL REFERENCES User(idUser),
+    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant) ON DELETE CASCADE,
+    idUser number NOT NULL REFERENCES User(idUser) ON DELETE SET NULL,
     idOrder varchar(50) REFERENCES User_order(idOrder) ON DELETE CASCADE
 );
 
@@ -47,7 +47,7 @@ CREATE TABLE Review_answer(
 
 CREATE TABLE Dish(
     idDish integer PRIMARY KEY AUTOINCREMENT,
-    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
+    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant) ON DELETE CASCADE,
     name varchar(255) NOT NULL,
     price varchar(255) NOT NULL,
     category varchar(100) NOT NULL,
@@ -56,14 +56,14 @@ CREATE TABLE Dish(
 
 CREATE TABLE Dish_order(
     idOrder varchar(50) REFERENCES User_order(idOrder) ON DELETE CASCADE,
-    idDish number NOT NULL REFERENCES Dish(idDish),
+    idDish number NOT NULL REFERENCES Dish(idDish) ON DELETE SET NULL,
     ammount number NOT NULL
 );
 
 CREATE TABLE User_order(
     idUser number NOT NULL REFERENCES User(idUser),
     idOrder varchar(50) PRIMARY KEY NOT NULL,
-    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
+    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant) ON DELETE SET NULL,
     date varchar(50) NOT NULL,
     total number NOT NULL,
     status varchar(50) NOT NULL
@@ -71,8 +71,8 @@ CREATE TABLE User_order(
 
 CREATE TABLE Restaurant_owner(
     idRestaurant_owner integer PRIMARY KEY AUTOINCREMENT,
-    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
-    idUser number NOT NULL REFERENCES User(idUser)
+    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant) ON DELETE CASCADE,
+    idUser number NOT NULL REFERENCES User(idUser) ON DELETE CASCADE
 );
 
 

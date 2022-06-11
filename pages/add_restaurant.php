@@ -23,7 +23,7 @@ drawHeader();
                 <label>Restaurant Logo:</label>
             </p>
             <p>
-                <input type="file" required name="image" title="Logo:">
+                <input type="file" required name="image">
             </p>
             <p>
                 <button type="submit">Create</button>

@@ -4,6 +4,7 @@ declare(strict_types = 1);
 session_start();
 require_once(__DIR__ . '/../database/connection.db.php');
 require_once(__DIR__ . '/../templates/common.tpl.php');
+require_once(__DIR__ . '/../templates/search.tpl.php');
 
 $db = getDatabaseConnection();
 
@@ -23,20 +24,10 @@ drawHeader();
         <main>
             <section class="results-grid">
                 <?php
-                foreach($results as $restaurant)
-                {
+                    foreach($results as $restaurant){ 
+                        drawRestaurant($restaurant['idRestaurant'], $restaurant['name'], $restaurant['category'], $restaurant['logo']);
+                    }
                 ?>
-                    <a href="../pages/profile.php?res=<?php echo($restaurant['idRestaurant'])?>">
-                        <article>
-                            <img src="https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png" width="50" height="50">
-                            <h2><?=$restaurant['name'];?></h2>
-                            <h3><?=$restaurant['category'];?></h3>
-                            <img src="https://thumbs.dreamstime.com/z/imagem-do-%C3%ADcone-de-estrelas-83946136.jpg" width="50" height="50">
-                        </article>
-                    </a>
-                <?php }
-                ?>
-                
             </section>
             <div class="form">
                     <a class="fcc-btn" href='../pages/add_restaurant.php'>Add New Restaurant</a>
