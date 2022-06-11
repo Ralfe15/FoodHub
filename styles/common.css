@@ -268,5 +268,8 @@ footer {
     color: black;
     border-radius: 0.5em;
     padding: 10px 15px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 10px;
     text-decoration: none;
   }

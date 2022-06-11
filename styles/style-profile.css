@@ -90,6 +90,12 @@
     font-weight: 900;
 }
 
+.dish_category{
+    margin: 0.5em;
+    font-weight: 700;
+}
+
+
 article{
     margin: 1em;
 }
