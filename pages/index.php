@@ -22,6 +22,10 @@
         <?php if(isset($_SESSION['id'])) {?>
         <div class="button-wrapper">
             <a class="fcc-btn" href='../pages/user_orders.php'>Your orders</a>
+
+        </div>  
+        <div class="button-wrapper">
+            <a class="fcc-btn" href='../pages/favorite_restaurants.php'>Your favorite restaurants</a>
         </div>  
         <?php
     }

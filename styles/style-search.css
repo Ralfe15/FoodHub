@@ -18,35 +18,39 @@
     justify-content: initial;
 }
 
-#results-grid
+.results-grid
 {
+    margin-top: 20px;
     display: flex;  
     flex-wrap: wrap;
+    gap: 2em;
     width: 100%;
     justify-content:space-evenly;
 }
 
-#results-grid > a
-{
-    
-    border: none;
-    border-radius: 1em;
-    margin: 2em;
-    flex-shrink: 0;
-    background-color: lightgray;
-    width: 20%;
-    height:fit-content;
-}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 15%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 10px 16px;
+  }
 
-#results-grid a article
-{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-}
+  .card img{
+    border-radius: 50%;
+  }
 
-#results-grid a article > img
-{
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
+  .container a{
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .fa-heart{
+    color:red;
+  }

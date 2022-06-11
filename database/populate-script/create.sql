@@ -5,11 +5,14 @@ PRAGMA foreign_keys = on;
 
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Review;
+DROP TABLE IF EXISTS Review_answer;
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS Dish;
 DROP TABLE IF EXISTS Dish_order;
 DROP TABLE IF EXISTS User_order;
 DROP TABLE IF EXISTS Restaurant_owner;
+DROP TABLE IF EXISTS Favorites;
+DROP TABLE IF EXISTS Favorite_dishes;
 
 
 CREATE TABLE User(
@@ -74,5 +77,16 @@ CREATE TABLE Restaurant_owner(
     idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant),
     idUser number NOT NULL REFERENCES User(idUser)
 );
+
+CREATE TABLE Favorite_restaurants(
+    idUser number NOT NULL REFERENCES User(idUser),
+    idRestaurant number NOT NULL REFERENCES Restaurant(idRestaurant)
+);
+
+CREATE TABLE Favorite_dishes(
+    idUser number NOT NULL REFERENCES User(idUser),
+    idDish number NOT NULL REFERENCES Dish(idDish)
+);
+
 
 
