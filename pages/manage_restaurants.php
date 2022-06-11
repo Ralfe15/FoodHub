@@ -25,7 +25,7 @@ drawHeader();
             <section class="results-grid">
                 <?php
                     foreach($results as $restaurant){ 
-                        drawRestaurant($restaurant['idRestaurant'], $restaurant['name'], $restaurant['category'], $restaurant['logo']);
+                        drawRestaurant($restaurant);
                     }
                 ?>
             </section>

@@ -42,7 +42,7 @@ function drawReviewOrderRow($order)
                 <span class="order-name"><?= ucfirst($order['name']) ?></span>
             </div>
             <div class="total">
-                <span id='total' class="price">$<?= $order['price'] ?>,00 x <?= $order['ammount'] ?></span>
+                <span id='total' class="price">$<?= $order['price'] ?> x <?= $order['ammount'] ?></span>
             </div>
         </td>
         <td>
