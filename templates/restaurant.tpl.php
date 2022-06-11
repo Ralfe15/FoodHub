@@ -15,7 +15,7 @@
                 </div>
             <?php }
             if(isset($_SESSION['id'])){?>
-                <a class="fcc-btn" onclick='addToCart(<?=json_encode($dish);?>)'>Add to cart</a>
+                <button class="fcc-btn buy-button" onclick='addToCart(<?=json_encode($dish);?>)'>Add to cart</button>
         <?php }?>
     </article>
  <?php }?>
