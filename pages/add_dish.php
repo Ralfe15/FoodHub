@@ -29,7 +29,7 @@ drawHeader();
                 <input type="text" required name="category" placeholder="category" />
             </p>
             <p>
-                <input type="text" required name="price" placeholder="price" />
+                <input type="number" required name="price" placeholder="price" />
             </p>
             <p>
                 

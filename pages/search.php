@@ -10,9 +10,16 @@ require_once(__DIR__ . '/../templates/search.tpl.php');
 $db = getDatabaseConnection();
 
 $res = "%{$_POST['search']}%";
+if($_POST['search-type'] == "restaurant"){
 $stmt = $db->prepare('Select * from Restaurant where name LIKE ?');
 $stmt->execute(array($res));
 $results = $stmt->fetchAll();
+}
+if($_POST['search-type'] == "dish"){
+    $stmt = $db->prepare('select restaurant.idrestaurant, restaurant.name, restaurant.category, restaurant.address, restaurant.logo from dish inner join restaurant on dish.idRestaurant = restaurant.idRestaurant where dish.name like ?');
+    $stmt->execute(array($res));
+    $results = $stmt->fetchAll();
+    }
 ?>
 
 <?= drawHeader(); ?>

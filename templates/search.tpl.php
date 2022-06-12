@@ -19,7 +19,7 @@
     
     <div class="card">
         <a href="../pages/profile.php?res=<?php echo ($restaurant['idRestaurant']) ?>">
-            <img src=<?php echo("../images/restaurant/small/" . $restaurant['logo'] . ".jpg")?>>
+            <img src=<?php echo ($restaurant['logo']!=null) ? "../images/restaurant/small/" . $restaurant['logo'] . ".jpg" : 'https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png'?>>
             <div class="container">
                 <h4><b><?= $restaurant['name']; ?></b></h4>
                 <p><?= $restaurant['category']; ?></p>
@@ -27,10 +27,10 @@
             </div>
             <?php  if(isset($_SESSION['id'])){
             if($isfav == 'false'){ ?>
-            <a onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Add to favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart-o" aria-hidden="true"></i></a>
+            <a id ="toggle" onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Add to favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart-o" aria-hidden="true"></i></a>
             <?php }?>
             <?php if($isfav == 'true'){ ?>
-            <a onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Remove from favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart" aria-hidden="true"></i></a>
+            <a id ="toggle" onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Remove from favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart" aria-hidden="true"></i></a>
             <?php }}?>
         </a>       
     </div>
