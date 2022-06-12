@@ -22,7 +22,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 $db = getDatabaseConnection();
-$stmt = $db->prepare('select user_order.idUser, user_order.idOrder, user_order.date, user_order.total, user_order.status, restaurant.name from user_order inner join restaurant on user_order.idRestaurant = restaurant.idRestaurant where idUser = ?');
+$stmt = $db->prepare('select user_order.rowid, user_order.idUser, user_order.idOrder, user_order.date, user_order.total, user_order.status, restaurant.name from user_order inner join restaurant on user_order.idRestaurant = restaurant.idRestaurant where idUser = ?');
 $stmt -> execute(array($_SESSION['id']));
 $result = $stmt->fetchAll();
 $orders = array();
@@ -31,7 +31,7 @@ foreach($result as $order){
 }
 
 //sort orders (recent first)
-usort($orders, 'date_compare');
+usort($orders, 'rowid_compare');
 
 
 ?>
