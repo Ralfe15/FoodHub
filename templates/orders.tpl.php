@@ -14,7 +14,7 @@ function drawOrderRow($order)
                 <span><?= $order['date'] ?></span>
             </div>
             <div class="total">
-                <span class="price">$<?= $order['total'] ?></span>
+                <span class="price">$<?= number_format(floatval($order['total']),2,",") ?></span>
             </div>
         </td>
 
@@ -34,7 +34,7 @@ function drawOrderRow($order)
 }
 function drawReviewOrderRow($order)
 {
-    $total = intval($order['ammount']) * intval($order['price']);
+    $total = floatval($order['ammount']) * floatval($order['price']);
 ?>
     <tr>
         <td class="td-order">
@@ -42,12 +42,12 @@ function drawReviewOrderRow($order)
                 <span class="order-name"><?= ucfirst($order['name']) ?></span>
             </div>
             <div class="total">
-                <span id='total' class="price">$<?= $order['price'] ?> x <?= $order['ammount'] ?></span>
+                <span id='total' class="price">$<?= number_format(floatval($order['price']),2,",") ?> x <?= $order['ammount'] ?></span>
             </div>
         </td>
         <td>
             <div class="total">
-                <span class="price">$<?= $total ?></span>
+                <span class="price">$<?= number_format($total,2,",") ?></span>
             </div>
         </td>
 
@@ -85,7 +85,7 @@ function drawOrderRowOwner($order)
                 <span id='idOrder'>Order reference: <?= $order['idOrder'] ?></span>
             </div>
             <div class="total">
-                <span class="price">$<?= $order['total'] ?>,00</span>
+                <span class="price">$<?= number_format(floatval($order['total']),2,",") ?></span>
             </div>
         </td>
 

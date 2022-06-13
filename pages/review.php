@@ -58,7 +58,7 @@ if ($status == 'answered') {
             <?php
             $total = 0;
             foreach ($ordered_dishes as $row) {
-                $total += intval($row['price']) * intval($row['ammount']);
+                $total += floatval($row['price']) * intval($row['ammount']);
                 drawReviewOrderRow($row);
             }
             ?>
@@ -70,7 +70,7 @@ if ($status == 'answered') {
                 </td>
                 <td>
                     <div class="total">
-                        <span class="price">$<?= $total ?></span>
+                        <span class="price">$<?= number_format($total,2,",") ?></span>
                     </div>
                 </td>
             </tr>

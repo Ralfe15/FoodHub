@@ -112,7 +112,7 @@ function checkout() {
     prevDish["quantity"] = window.sessionStorage.getItem(keys[i]);
     rawBody[i] = prevDish;
   }
-  rawBody['total'] = parseFloat(total).toFixed(2);
+  rawBody['total'] = total.substring(1, total.length);
   fetch('../actions/action_checkout.php', {
     method: "POST",
     headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },
