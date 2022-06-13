@@ -25,7 +25,8 @@ drawHeader();
             <button type="submit" class="search-button"><i></i>&#x276F</button>      
         </form>
     </div>
-    <div class="wrapper">
+    <div class="search-by">
+            <span>By:</span>
             <input type="radio" name="select" id="option-1" value = "restaurant" checked onclick="toggleSearch()">
             <input type="radio" name="select" id="option-2" value= "dish" onclick="toggleSearch()">
             <label for="option-1" class="option option-1" name="restaurant">
@@ -40,10 +41,8 @@ drawHeader();
     <?php if (isset($_SESSION['id'])) { ?>
         <div class="button-wrapper">
             <a class="fcc-btn" href='../pages/user_orders.php'>Your orders</a>
-
-        </div>
-        <div class="button-wrapper">
             <a class="fcc-btn" href='../pages/favorite_restaurants.php'>Your favorite restaurants</a>
+
         </div>
     <?php
     }

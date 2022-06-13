@@ -38,15 +38,11 @@
 
 
 <?php function createResizedRestaurantImages($fileName){
-  if (!is_dir('../images/restaurant/small')) {
-    mkdir('../images/restaurant/small');
-  }
   if (!is_dir('../images/restaurant/medium')) {
     mkdir('../images/restaurant/medium');
   }
 
   $originalFileName = "../images/restaurant/originals/" . $fileName . ".jpg";
-  $smallFileName = "../images/restaurant/small/" . $fileName . ".jpg";
   $mediumFileName = "../images/restaurant/medium/" . $fileName . ".jpg";
 
   $original = imagecreatefromjpeg($originalFileName);
@@ -56,11 +52,6 @@
   $width = imagesx($original);     // width of the original image
   $height = imagesy($original);    // height of the original image
   $square = min($width, $height);  // size length of the maximum square
-
-  // Create and save a small square thumbnail
-  $small = imagecreatetruecolor(50, 50);
-  imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 50, 50, $square, $square);
-  imagejpeg($small, $smallFileName);
 
   // Calculate width and height of medium sized image (max width: 400)
   $medium = imagecreatetruecolor(200, 200);

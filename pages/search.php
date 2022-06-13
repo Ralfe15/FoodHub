@@ -41,7 +41,8 @@ if($_POST['search-type'] == "dish"){
             <button type="submit" class="search-button"><i></i>&#x276F</button>
         </form>
     </div>
-    <div class="wrapper">
+    <div class="search-by">
+            <span>By:</span>
             <input type="radio" name="select" id="option-1" value = "restaurant" <?php if($_POST['search-type'] == "restaurant")echo 'checked'?> onclick="toggleSearch()">
             <input type="radio" name="select" id="option-2" value= "dish" <?php if($_POST['search-type'] == "dish")echo 'checked'?> onclick="toggleSearch()">
             <label for="option-1" class="option option-1" name="restaurant">
