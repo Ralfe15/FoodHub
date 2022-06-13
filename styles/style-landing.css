@@ -77,7 +77,7 @@
     left: 4px;
     width: 12px;
     height: 12px;
-    background: #0069d9;
+    background: black;
     border-radius: 50%;
     opacity: 0;
     transform: scale(1.5);
@@ -88,8 +88,8 @@
   }
   #option-1:checked:checked ~ .option-1,
   #option-2:checked:checked ~ .option-2{
-    border-color: #0069d9;
-    background: #0069d9;
+    border-color: black;
+    background: black;
   }
   #option-1:checked:checked ~ .option-1 .dot,
   #option-2:checked:checked ~ .option-2 .dot{

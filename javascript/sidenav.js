@@ -9,10 +9,10 @@ function openNav() {
   for (const key of keys) {
     const dish = JSON.parse(key);
     const ammount = window.sessionStorage.getItem(key);
-    total_val += parseInt(dish.price) * parseInt(ammount);
+    total_val += parseFloat(dish.price) * parseInt(ammount);
     assembleCartItem(dish, ammount);
   }
-  total.textContent = "$" + total_val + ",00";
+  total.textContent = "$" + parseFloat(total_val).toFixed(2);
   document.getElementById("mySidenav").style.width = "350px";
   if (total_val == 0) {
     document.querySelector(".checkout-button").style.display = "none"
@@ -112,7 +112,7 @@ function checkout() {
     prevDish["quantity"] = window.sessionStorage.getItem(keys[i]);
     rawBody[i] = prevDish;
   }
-  rawBody['total'] = parseInt(total.substring(1, total.length-3));
+  rawBody['total'] = parseFloat(total).toFixed(2);
   fetch('../actions/action_checkout.php', {
     method: "POST",
     headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },

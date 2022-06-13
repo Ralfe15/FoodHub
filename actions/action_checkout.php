@@ -29,7 +29,7 @@ if (isset($_SESSION['id'])) {
     $order_id = uniqid();
     $items = json_decode(file_get_contents('php://input'), true);
     $restaurant_id = $items[0]['idRestaurant'];
-    $total = intval($items['total']);
+    $total = round(floatval($items['total']),2);
     unset($items['total']);
     //insert row into User_order (create order)
     $stmt = $db->prepare('Insert into User_order (idUser, idOrder, idRestaurant, date, total, status) VALUES (?, ?, ?, ?, ?, ?)');

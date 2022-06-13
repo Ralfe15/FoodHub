@@ -14,7 +14,7 @@ function drawOrderRow($order)
                 <span><?= $order['date'] ?></span>
             </div>
             <div class="total">
-                <span class="price">$<?= $order['total'] ?>,00</span>
+                <span class="price">$<?= $order['total'] ?></span>
             </div>
         </td>
 
@@ -47,7 +47,7 @@ function drawReviewOrderRow($order)
         </td>
         <td>
             <div class="total">
-                <span class="price">$<?= $total ?>,00</span>
+                <span class="price">$<?= $total ?></span>
             </div>
         </td>
 

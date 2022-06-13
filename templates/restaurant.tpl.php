@@ -7,7 +7,7 @@
         <img src=<?php echo ($dish['photo']!=null) ? "../images/dish/small/". $dish['photo'] .".jpg" : 'https://picsum.photos/200/200?business?id='.$dish['idDish']?>>
         <h2 class="dish"><?=ucfirst($dish['name'])?></h2>
         <h4 class="dish_category"><?=ucfirst($dish['category'])?></h5>
-        <h3 class="dish_price"><?="$ ". $dish['price']?>,00</h3>
+        <h3 class="dish_price"><?="$ ". $dish['price']?></h3>
         <?php
             if($isowner){ ?>
                 <div class="buttons-wrapper">

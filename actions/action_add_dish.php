@@ -11,9 +11,6 @@
   $name = $_POST['name'];
   $category = $_POST['category'];
   $price = $_POST['price'];
-  str_replace(".", ",", $price);
-  if(strpos($price, ",") == false)
-      $price = $price . ",00";
 
   
   $fileName = NULL;

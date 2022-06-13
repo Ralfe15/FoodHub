@@ -70,7 +70,7 @@ if ($status == 'answered') {
                 </td>
                 <td>
                     <div class="total">
-                        <span class="price">$<?= $total ?>,00</span>
+                        <span class="price">$<?= $total ?></span>
                     </div>
                 </td>
             </tr>
@@ -129,13 +129,13 @@ if ($status == 'answered') {
     }
     ?>
     <?php if ($status == 'reviewed') { ?>
-        <h3>Answer review:</h3>
-        <!-- TODO action submit answer below -->
+        <h3>Reply to review:</h3>
+        <!-- TODO action submit reply below -->
         <form method="POST" action="../actions/action_submit_answer.php">
             <input style="display:none" type='text' name="idOrder" value='<?= $order_id ?>' />
             <input style="display:none" type='text' name="res" value='<?= $_GET['res'] ?>' />
             <div class="text-wrapper">
-                <textarea required id="subject" name="subject" placeholder="Write something about your experience" style="width: 50vw;height:200px"></textarea>
+                <textarea required id="subject" name="subject" placeholder="Reply to customer review" style="width: 50vw;height:200px"></textarea>
                 <button type="submit">Submit</button>
             </div>
         </form>
