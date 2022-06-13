@@ -45,6 +45,8 @@
 #logo > img{
     margin: 1em;
     border-radius: 50%;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 #category{
@@ -70,11 +72,12 @@
 
 #highlights{
     display: flex;
+    flex-wrap: wrap;
 }
 
 #highlights > article{
     border-radius: 0.8em;
-    width: 20em;
+    width: 12em;
 }
 
 #highlights img{
@@ -113,4 +116,10 @@ article{
     display: block;
     margin-top: 2em;
     margin-bottom: 7em;
+}
+
+.buttons-wrapper{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
 }

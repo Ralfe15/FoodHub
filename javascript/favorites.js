@@ -11,14 +11,18 @@ function toggleFavorite(id, isfav){
       }).then(response => response.json()
       ).then((response) => {
         if (response.success) {
-            window.location.reload()
-        } else {
+            const button = document.querySelector("#toggle"+id)
+            const icon = document.querySelector("#heart-icon"+id)
+            icon.className = "fa fa-heart"
+            button.textContent = "Remove from favorites: "
+            button.append(icon)
+            button.setAttribute("onclick", "toggleFavorite("+id+", 'true')")
+          } else {
           throw new Error(response.message);
         }
       });
     }
     if(isfav == 'true'){
-        console.log("tesafega")
         fetch('../actions/action_remove_favorite.php', {
             method: "POST",
             headers: { "Content-type": "application/json" },
@@ -26,7 +30,12 @@ function toggleFavorite(id, isfav){
           }).then(response => response.json()
           ).then((response) => {
             if (response.success) {
-              window.location.reload();
+              const button = document.querySelector("#toggle"+id)
+              const icon = document.querySelector("#heart-icon"+id)
+              icon.className = "fa fa-heart-o"
+              button.textContent = "Add to favorites: "
+              button.append(icon)
+              button.setAttribute("onclick", "toggleFavorite("+id+", 'false')")
             } else {
               throw new Error(response.message);
             }

@@ -26,10 +26,10 @@ foreach ($result as $restaurant) {
 
 
 ?>
-    <link rel="stylesheet" href="../styles/style-search.css">
+<link rel="stylesheet" href="../styles/style-search.css">
 <script src="/../javascript/favorites.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="wrapper">
+<div class="content-wrapper">
     <div class="title-wrapper">
         <h1 style="margin-left: 2em">Your favorite restaurants</h1>
     </div>

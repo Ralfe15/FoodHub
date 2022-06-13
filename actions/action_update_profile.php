@@ -14,6 +14,6 @@
 
   $stmt = $db->prepare('Update User SET name = ?, email = ?, phone = ?, address = ? WHERE idUser = ?');
   $stmt -> execute(array($name, $username, $phone, $address, $id));
-
+  $_SESSION['name'] = $name;
   header('Location: http://localhost:9000/pages/index.php'); 
   ?>

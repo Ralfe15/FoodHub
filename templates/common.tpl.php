@@ -25,6 +25,7 @@ declare(strict_types=1); ?>
 
     <?php function drawFooter()
     { ?>
+    <div class="clear"></div>
         <footer>
             LTW Project &copy; 2022
         </footer>

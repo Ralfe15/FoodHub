@@ -21,13 +21,12 @@ drawHeader();
     <div id="search-div">
         <form action="../pages/search.php" id="search" method="POST">
             <input type="text" placeholder="Search.." name="search">
-            <input id="search-type" type="text" name="search-type" style="display:none" value="restaurant">      
-
+            <input type="text" id="search-type" name="search-type" style="display:none" value="restaurant">      
             <button type="submit" class="search-button"><i></i>&#x276F</button>      
         </form>
     </div>
     <div class="wrapper">
-            <input type="radio" name="select" id="option-1" value = "restaurant "checked onclick="toggleSearch()">
+            <input type="radio" name="select" id="option-1" value = "restaurant" checked onclick="toggleSearch()">
             <input type="radio" name="select" id="option-2" value= "dish" onclick="toggleSearch()">
             <label for="option-1" class="option option-1" name="restaurant">
                 <div class="dot"></div>

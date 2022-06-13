@@ -48,6 +48,9 @@ body>header {
     background-color: lightgray;
 }
 
+.clear { clear: both; height: 50px; }
+
+
 footer {
     position: fixed;
     background-color: black;
@@ -112,6 +115,7 @@ footer {
     border-radius: 0.5em;
     padding: 10px 15px;
     text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .results-grid
@@ -272,6 +276,7 @@ footer {
     margin: 0 auto;
     margin-bottom: 10px;
     text-decoration: none;
+    cursor: pointer;
   }
 
   label {

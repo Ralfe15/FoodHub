@@ -34,8 +34,8 @@ function assembleCartItem(dish, ammount) {
   name.className = "item-name";
   price.className = "item-price";
   quantity.className = "item-quantity";
-
-  img.src = 'https://picsum.photos/200/200?business'
+  
+  img.src = (dish.photo == null) ? 'https://picsum.photos/200/200?business?id='+dish.id : "../images/dish/small/" + String(dish.photo) + ".jpg"
 
   name.textContent = capitalizeFirstLetter(dish.name);
   price.textContent = "$" + dish.price;
@@ -63,6 +63,7 @@ function closeNav() {
 }
 
 function addToCart(dish) { //dish is a json encoded dish with id, price, ...
+  console.log(dish)
   const keys = Object.keys(window.sessionStorage);
   if (keys.length == 0 || JSON.parse(keys[0]).idRestaurant == dish.idRestaurant) {
     const key = JSON.stringify(dish)
