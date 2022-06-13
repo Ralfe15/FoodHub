@@ -88,6 +88,7 @@ if ($status == 'answered') {
             }
             ?>
             <?php if (isset($answer)) { ?>
+                <tr>
                     <td>
                         <span>
                             <?= $name ?>

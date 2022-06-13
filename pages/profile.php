@@ -46,7 +46,8 @@ drawHeader();
 
 <head>
     <link rel="stylesheet" href="../styles/style-profile.css">
-    
+    <link rel="stylesheet" href="../styles/style-review.css">
+
     <link rel="stylesheet" href="../styles/common.css">
 </head>
 
@@ -79,29 +80,46 @@ drawHeader();
             </div>
         <?php } ?>
     </div>
-    <h3>Reviews: </h3>
-    <?php 
-    $stmt = $db->prepare('SELECT review, rating, user.name from Review JOIN user on review.idUser = user.idUser WHERE idRestaurant = ?');
-    $stmt->execute(array($res));
-    $reviews = $stmt->fetchAll();
-    if(isset($reviews)){
-    ?>
-    <tbody>
-        <?php foreach($reviews as $review){?>
-        <tr>
-            <td>
-                <span>
-                    <?=$review['name']?>
-                </span>
-                <p><?=$review['review']?></p>
-                <p><?=$review['rating']?>/5</p>
-            </td>
-        </tr>
+    <div class="wrapper">
+
+        <h3>Reviews: </h3>
         <?php
-         } 
+        $stmt = $db->prepare('select user.name, restaurant.name as restaurant, review.rating, review.review, review_answer.answer from Review left join review_answer on Review.idOrder = review_answer.idOrder join user on review.idUser = user.idUser join restaurant on review.idRestaurant = restaurant.idRestaurant where review.idRestaurant = ?');
+        $stmt->execute(array($res));
+        $reviews = $stmt->fetchAll();
+        if (isset($reviews) && (count($reviews) != 0)) {
         ?>
-    </tbody>
-    <?php }?>
+            <table class="orders-table">
+                <tbody>
+                    <?php foreach ($reviews as $review) { ?>
+                        <tr>
+                            <td>
+                                <span>
+                                    User: <?=$review['name'] ?>
+                                </span>
+                                <p>Review: <?= $review['review'] ?></p>
+                                <p>Rating: <?= $review['rating'] ?> <i class="fa fa-star" aria-hidden="true"></i></p>
+                            </td>
+                        </tr>
+                        <?php if ($review['answer'] != null) { ?>
+                            <tr>
+                                <td>
+                                    <span>
+                                        <?= $review['restaurant'] ?> answered <?= $review['name'] ?>:
+                                    </span>
+                                    <p><?= $review['answer'] ?></p>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        <?php }
+        else { ?>
+            <p>No reviews to show :(</p>
+        <?php } ?>
     </div>
 </body>
 
