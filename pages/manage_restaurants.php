@@ -24,7 +24,7 @@ drawHeader();
     </head>
     <body>
         <main>
-            <section class="results-grid">
+            <section class="manage-grid">
                 <?php
                     foreach($results as $restaurant){ 
                         drawRestaurant($restaurant);

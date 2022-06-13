@@ -18,7 +18,7 @@ $stmt = $db->prepare('Select * from Dish where idRestaurant = ?');
 $stmt->execute(array($res));
 $dishes = $stmt->fetchAll();
 foreach ($dishes as $dish) {
-    $prices[] = intval($dish['price']);
+    $prices[] = floatval($dish['price']);
 }
 if (isset($prices)) {
     sort($prices);
@@ -57,7 +57,7 @@ drawHeader();
             <h1 id="title"><a href="../pages/profile.php?res=<?php echo ($res) ?>"><?php echo ($result[0]["name"]) ?></a></h1>
             <a href="../pages/profile.php?res=<?php echo ($res) ?>" id="logo"><img src=<?php echo ($result[0]['logo'] != null) ? "../images/restaurant/medium/" . $result[0]['logo'] . ".jpg" : 'https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png' ?>></a>
             <h4 id="category"><?php echo ($result[0]["category"]) ?></h4>
-            <h4 id="price"><?= "From $$minprice" ?></h4>
+            <h4 id="price"><?= "From $".number_format($minprice, 2, ",") ?></h4>
             <h4 id="rating">5</h4>
             <form action="../pages/profile.php" method="get" id="search">
                 <input type="hidden" name="res" value="<?php echo ($res) ?>">
@@ -93,6 +93,7 @@ drawHeader();
                 <tbody>
                     <?php foreach ($reviews as $review) { ?>
                         <tr>
+
                             <td>
                                 <span>
                                     User: <?=$review['name'] ?>

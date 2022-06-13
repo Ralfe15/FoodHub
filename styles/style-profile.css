@@ -123,3 +123,7 @@ article{
     text-align: center;
     flex-direction: column;
 }
+
+.buy-button{
+    margin: 0 auto;
+}

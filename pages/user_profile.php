@@ -16,9 +16,6 @@ $id = $_SESSION['id'];
 $stmt = $db->prepare('Select * from user where idUser = ?');
 $stmt->execute(array($id));
 $result = $stmt->fetchAll();
-/*$stmt = $db->prepare('Select * from restaurant_owner where idUser = ?');
-$stmt->execute(array($id));
-$result2 = $stmt->fetchAll();*/
 
 
 ?>
@@ -69,9 +66,9 @@ $result2 = $stmt->fetchAll();*/
     </form>
 
 </div>
-<div class="form-login">
+<div class="login-extra-buttons">
     <a class="fcc-btn" href='../pages/update_password.php'>Change password</a>
 </div>
-<div class="form-login">
+<div class="login-extra-buttons">
     <a class="fcc-btn" href='../pages/manage_restaurants.php'>Manage Restaurants</a>
 </div>

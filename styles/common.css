@@ -273,7 +273,6 @@ footer {
     border-radius: 0.5em;
     padding: 10px 15px;
     display: flex;
-    margin: 4em 1em;
     margin-bottom: 10px;
     text-decoration: none;
     cursor: pointer;
@@ -288,6 +287,7 @@ footer {
   .labeled-form{
     text-align: center;
     display: block;
+    margin-bottom: 4em;
 }
 
 .labeled-form  input{

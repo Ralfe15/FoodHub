@@ -10,9 +10,7 @@ drawHeader();
         <link rel="stylesheet" href="../styles/login.css">
     </head>
     <body>
-<div class="title">
-    <h1>Login page</h1>
-</div>
+<h1 style="text-align: center;">Login </h1>
 <div class="form">
     <form action="../actions/action_login.php" method="post">
         <p>

@@ -9,10 +9,8 @@ drawHeader();
         <link rel="stylesheet" href="../styles/login.css">
     </head>
     <body>
-        <div class="title">
-        <h1>Sign up</h1>
-        </div>
-        <div class="form-login">
+        <h1 style="text-align: center;">Sign up</h1>
+        <div class="form">
             <form action="../actions/action_signup.php" method="post" id="form_login">
                 <p> 
                     <input type="text" required name="name" placeholder="name" />

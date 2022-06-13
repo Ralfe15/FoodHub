@@ -19,7 +19,13 @@ form > p:last-child{
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4em;
+}
+
+.login-extra-buttons {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5em;
 }
 
   .error-msg{

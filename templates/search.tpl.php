@@ -28,10 +28,10 @@
         </a>
             <?php  if(isset($_SESSION['id'])){
             if($isfav == 'false'){ ?>
-            <a id =<?="toggle".$restaurant['idRestaurant']?> onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Add to favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart-o" aria-hidden="true"></i></a>
+            <a class="favorite-btn" id =<?="toggle".$restaurant['idRestaurant']?> onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Add to favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart-o" aria-hidden="true"></i></a>
             <?php }?>
             <?php if($isfav == 'true'){ ?>
-            <a id =<?="toggle".$restaurant['idRestaurant']?> onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Remove from favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart" aria-hidden="true"></i></a>
+            <a class="favorite-btn" id =<?="toggle".$restaurant['idRestaurant']?> onclick="toggleFavorite('<?= $restaurant['idRestaurant'] ?>', '<?= $isfav ?>')">Remove from favorites : <i id="heart-icon<?=$restaurant['idRestaurant']?>"class="fa fa-heart" aria-hidden="true"></i></a>
             <?php }}?>
         </a>       
     </div>
