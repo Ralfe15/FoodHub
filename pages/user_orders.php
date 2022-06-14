@@ -15,8 +15,6 @@ drawHeader();
 require_once(__DIR__ . '/../database/connection.db.php');
 
 
-
-
 if (!isset($_SESSION['id'])) {
     header('Location: http://localhost:9000/pages/login.php');
 }

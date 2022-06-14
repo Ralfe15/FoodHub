@@ -49,8 +49,9 @@ drawHeader();
 <head>
     <link rel="stylesheet" href="../styles/style-profile.css">
     <link rel="stylesheet" href="../styles/style-review.css">
-
     <link rel="stylesheet" href="../styles/common.css">
+    <script src="/../javascript/favorites.js"></script>
+
 </head>
 
 <body>
@@ -73,7 +74,13 @@ drawHeader();
         <section id="highlights">
             <?php
             foreach ($dishes as $dish) {
-                drawDish($dish);
+                if(isset($_SESSION['id'])){
+                    $stmt = $db->prepare('Select * from Favorite_dishes where idDish = ? and idUser = ?');
+                    $stmt->execute(array($dish['idDish'], $_SESSION['id']));
+                    $isfav = $stmt->fetchAll();
+                    $isfav = ($isfav == null) ? "false" : "true";     
+                }
+                drawDish($dish, $isfav);
             } ?>
         </section>
         <?php if ($isowner) { ?>

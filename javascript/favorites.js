@@ -41,6 +41,46 @@ function toggleFavorite(id, isfav){
             }
           });
         }
+}
 
+function toggleFavoriteDish(id, isfav){
+  var rawBody = {
+    "id": id,
+}
+console.log(isfav)
+if(isfav == 'false'){
+  fetch('../actions/action_add_favorite_dish.php', {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(rawBody),
+    }).then(response => response.json()
+    ).then((response) => {
+      if (response.success) {
+          const button = document.querySelector("#toggle"+id)
+          const icon = document.querySelector("#star-icon"+id)
+          icon.className = "fa fa-star"
+          button.setAttribute("onclick", "toggleFavoriteDish("+id+", 'true')")
+        } else {
+        throw new Error(response.message);
+      }
+    });
+  }
+  if(isfav == 'true'){
+      fetch('../actions/action_remove_favorite_dish.php', {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(rawBody),
+        }).then(response => response.json()
+        ).then((response) => {
+          if (response.success) {
+            const button = document.querySelector("#toggle"+id)
+            const icon = document.querySelector("#star-icon"+id)
+            icon.className = "fa fa-star-o"
+            button.setAttribute("onclick", "toggleFavoriteDish("+id+", 'false')")
+          } else {
+            throw new Error(response.message);
+          }
+        });
+      }
 
 }
