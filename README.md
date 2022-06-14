@@ -43,6 +43,31 @@ The object of the project is to fully simulate a food ordering/delivery website 
 </li>
 </ul>
 
+## Features
+
+- [x] Register
+- [x] Login/Logout
+- [x] Edit Profile
+- [x] Add Restaurant
+- [x] Edit Restaurant
+- [x] Add Dishes
+- [x] Add Dish Photo
+- [x] List Reviews
+- [x] Restaurant Owner Can Answer to Review
+- [x] List Customer Orders
+- [x] Change Order State
+- [x] Search Restaurants
+- [x] Order Dishes
+- [x] List My Orders
+- [x] Mark Restaurant as Favourite
+- [x] Mark Dish as Favourite
+- [x] Customer Can Leave a Review
+
+## Extra Features
+- [x] REST API
+- [x] Track price history (used in REST API)
+
+
 ## Members:
 
 - Ian Ítalo Martins Gomes (ianitalo) - up202000707
