@@ -28,3 +28,27 @@ function getDishPriceHistory(PDO $db, string $search) : array {
     $dishes = $stmt->fetchAll();
     return $dishes;
 }
+
+function getDishes(PDO $db): array {
+    $stmt = $db->prepare('SELECT name, idDish, price FROM Dish');
+    $stmt->execute(array());
+    $dishes = $stmt->fetchAll();
+    return $dishes;
+}
+
+function getDishesByMaxPrice(PDO $db, string $maxprice): array {
+    $stmt = $db->prepare('SELECT name, idDish, price FROM Dish where CAST(price as FLOAT) < ?');
+    $stmt->execute(array(floatval($maxprice)));
+    $dishes = $stmt->fetchAll();
+    return $dishes;
+}
+
+function getRestaurantByRating(PDO $db, string $minrating): array{
+    $stmt = $db->prepare('Select restaurant.name, review.idRestaurant, avg(rating) as rating from review join restaurant on restaurant.idRestaurant = review.idRestaurant where rating >= ?');
+    $stmt->execute(array($minrating));
+    $dishes = $stmt->fetchAll();
+    if($dishes[0]['rating'] == null){
+        return [];
+    }
+    return $dishes;
+}

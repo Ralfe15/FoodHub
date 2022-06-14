@@ -56,9 +56,9 @@ $result = $stmt->fetchAll();
         ?>
             <p>
                 <label><?= ucfirst($field) ?>:</label>
-                <input type=<?= $type ?> <?php echo ($field=='avatar')?'id=photoimg onchange="readURL(this);"':'required';?> name="<?= $field ?>" value="<?= $value ?>" />
+                <input type=<?= $type ?> <?php echo ($field == 'avatar') ? 'id=photoimg onchange="readURL(this);"' : 'required'; ?> name="<?= $field ?>" value="<?= $value ?>" />
             </p>
-        <?php }?>
+        <?php } ?>
         <p>
             <button type="submit">Save Changes</button>
         </p>
@@ -71,4 +71,4 @@ $result = $stmt->fetchAll();
     <a class="fcc-btn" href='../pages/manage_restaurants.php'>Manage Restaurants</a>
 </div>
 
-<?php drawFooter()?>
+<?php drawFooter() ?>

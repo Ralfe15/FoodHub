@@ -74,7 +74,7 @@ declare(strict_types=1); ?>
         <div id="register">
             <a href="/../actions/action_logout.php" onclick="clearSession()" id="signup">Log out</a>
             <a href="/../pages/user_profile.php" id="login"><?= $user[0]['name'] ?></a>
-            <?php if(!empty($user[0]['avatar'])){ ?>
+            <?php if(($user[0]['avatar']!=null)){ ?>
                 <a href="/../pages/user_profile.php">
                     <img  id="avatar" src=<?php echo "../images/user/small/". $user[0]['avatar'] .".jpg" ?>>
                 </a>

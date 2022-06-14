@@ -61,6 +61,9 @@ insert into User values(56, 'Jay Coleman', 'Desireesparkling@voila.fr', 26629314
 insert into User values(57, 'Jodie Cole', 'Wesleyashamed@gmail.com', 822769373, '48, Church Lane - College Station', 'P62smJ6jDO', NULL);
 insert into User values(58, 'Hollie Grimes', 'mysteriousMonica@hotmail.de', 600485730, '691, Blue Ridge Drive - Spartanburg', '94HsJ6v5F1', NULL);
 insert into User values(59, 'Marlon Farrell', 'attractiveKenneth25@tin.it', 726242794, '953, Surrey Lane - Fayetteville', 'qzCaZ6IKId', NULL);
+insert into User values(60, 'LTW Teachers', 'ltw@ltw.com', 915578562, 'Rua Dr. Roberto Frias, s/n', '$2y$10$RqV/acmK4FxfbdIMMo5aOefg85ocJhHjeIhm6duqHY2hloTd.jspy', NULL);
+insert into User values(61, 'Guest', 'guest@guest.com', 915663332, 'Rua 1', '$2y$10$.VfwXKvDZs4akmMFW9JRYu/cZL.HO83g1E55MUosNpFr7NnWKXHmK', NULL);
+
 
 insert into Restaurant values(0, 'Ya', 'Breakfast', '304, 9th Street North - Clearwater', NULL);
 insert into Restaurant values(1, 'Smokey’s Texas Grill', 'Portuguese', '480, Welsh Road - Medford', NULL);
