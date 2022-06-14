@@ -58,7 +58,7 @@ drawHeader();
     <div class="container">
         <div class="profile">
             <h1 id="title"><a href="../pages/profile.php?res=<?php echo ($res) ?>"><?php echo ($result[0]["name"]) ?></a></h1>
-            <a href="../pages/profile.php?res=<?php echo ($res) ?>" id="logo"><img src=<?php echo ($result[0]['logo'] != null) ? "../images/restaurant/medium/" . $result[0]['logo'] . ".jpg" : 'https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png' ?>></a>
+            <a href="../pages/profile.php?res=<?php echo ($res) ?>" id="logo"><img src=<?php echo ($result[0]['logo'] != null) ? "../images/restaurant/medium/" . $result[0]['logo'] . ".jpg" : 'https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-restaurant-logo-template-design-restaurant-logo-with-modern-frame-isolated-png-image_886208.jpg' ?>></a>
             <div id="category">
             <h4><?php echo ($result[0]["category"]) ?></h4>
             <p><?= ($rating['rating']==null) ? 'Not rated' : $rating['rating'] . ' <i class="fa fa-star" aria-hidden="true"></i>' ?></p>

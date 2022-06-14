@@ -119,8 +119,8 @@
   $square = min($width, $height);  // size length of the maximum square
 
   // Calculate width and height of medium sized image (max width: 400)
-  $medium = imagecreatetruecolor(100, 100);
-  imagecopyresized($medium, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 100, 100, $square, $square);
+  $medium = imagecreatetruecolor(200, 200);
+  imagecopyresized($medium, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 200, 200, $square, $square);
   imagejpeg($medium, $mediumFileName);
 
   $small = imagecreatetruecolor(50, 50);

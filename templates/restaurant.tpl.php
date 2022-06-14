@@ -15,16 +15,16 @@ declare(strict_types=1); ?>
                 </a>
             <?php } ?>
             <?php if ($isfav == 'false') { ?>
-                <a id=<?= "toggle" . $dish['idDish'] ?> onclick="toggleFavoriteDish('<?= $dish['idDish'] ?>', '<?= $isfav ?>')">
+                <a class="star" id=<?= "toggle" . $dish['idDish'] ?> onclick="toggleFavoriteDish('<?= $dish['idDish'] ?>', '<?= $isfav ?>')">
                     <i id="star-icon<?=$dish['idDish']?>" style='float:right' class="fa fa-star-o" aria-hidden="true"></i>
                 </a>
             <?php } else { ?>
-                <a id=<?= "toggle" . $dish['idDish'] ?> onclick="toggleFavoriteDish('<?= $dish['idDish'] ?>', '<?= $isfav ?>')">
+                <a class="star" id=<?= "toggle" . $dish['idDish'] ?> onclick="toggleFavoriteDish('<?= $dish['idDish'] ?>', '<?= $isfav ?>')">
                     <i id="star-icon<?=$dish['idDish']?>" style='float:right' class="fa fa-star" aria-hidden="true"></i>
                 </a>
             <?php } ?>
         </h2>
-        <h4 class="dish_category"><?= ucfirst($dish['category']) ?></h5>
+        <h4 class="dish_category"><?= ucfirst($dish['category']) ?></h4>
             <h3 class="dish_price"><?= "$ " . number_format(floatval($dish['price']), 2, ",", "") ?></h3>
             <?php
             if (isset($_SESSION['id'])) { ?>

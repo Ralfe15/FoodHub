@@ -23,8 +23,12 @@ drawHeader();
 <head>
     <link rel="stylesheet" href="../styles/common.css">
 </head>
+<script src="/../javascript/update_profile_script.js"></script>
 <h1 style="text-align: center;">Edit Dish</h1>
 <div class="labeled-form">
+    <div id='preview'>
+        <img  id="avatar-preview" src=<?php echo ($result[0]['photo']!=null) ? "../images/dish/medium/". $result[0]['photo'] .".jpg" : 'https://picsum.photos/200/200?business?id='. $result[0]['idDish']?>>
+    </div>
     <form action="../actions/action_edit_dish.php" method="post" id="form_edit_restaurant" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?=$idDish?>">
         <input type="hidden" name="idRestaurant" value="<?=$result[0]['idRestaurant']?>">
@@ -42,7 +46,7 @@ drawHeader();
         </p>
         <p>
             <label>Photo:</label>
-            <input type="file" name="image">
+            <input type="file" onchange="readURL(this);" name="image">
         </p>
         <p>
             <button type="submit">Save</button>

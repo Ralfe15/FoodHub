@@ -93,12 +93,14 @@
 }
 
 .dish{
+    display: flex;
+    align-items: center;
     margin: 0.5em;
     font-weight: 900;
 }
 
 .dish_category{
-    margin: 0.5em;
+    margin: 0 0.5em 0.5em 0.5em;
     font-weight: 700;
 }
 
@@ -127,8 +129,17 @@
     margin: 0 auto;
 }
 
+
+.star{
+    margin-left: auto;
+}
+
 .fa-star{
     -webkit-text-fill-color: yellow;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: gold;
+}
+
+h2{
+    flex-grow: 1;
 }

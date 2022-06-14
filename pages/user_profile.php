@@ -27,6 +27,9 @@ $result = $stmt->fetchAll();
 
 <h1 style="text-align: center;">Edit profile </h1>
 <div class="labeled-form">
+    <div id='preview'>
+        <img  id="avatar-preview" src=<?php echo ($result[0]['avatar']!=null) ? "../images/user/medium/". $result[0]['avatar'] .".jpg" : 'https://picsum.photos/200/200?business?id='. $id?>>
+    </div>
     <form id="imageform" action="../actions/action_update_profile.php" method="post" enctype="multipart/form-data">
         <?php
         $id = $result[0]['idUser'];
@@ -60,10 +63,6 @@ $result = $stmt->fetchAll();
             <button type="submit">Save Changes</button>
         </p>
     </form>
-    <div id='preview'>
-    <img  id="avatar-preview" src=<?php echo ($result[0]['avatar']!=null) ? "../images/user/small/". $result[0]['avatar'] .".jpg" : 'https://picsum.photos/200/200?business?id='. $id?>>
-        </div>
-
 </div>
 <div class="login-extra-buttons">
     <a class="fcc-btn" href='../pages/update_password.php'>Change password</a>

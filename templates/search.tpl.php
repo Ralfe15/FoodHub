@@ -19,7 +19,7 @@
     
     <div class="card">
         <a href="../pages/profile.php?res=<?php echo ($restaurant['idRestaurant']) ?>">
-            <img src=<?php echo ($restaurant['logo']!=null) ? "../images/restaurant/medium/" . $restaurant['logo'] . ".jpg" : 'https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png'?>>
+            <img src=<?php echo ($restaurant['logo']!=null) ? "../images/restaurant/medium/" . $restaurant['logo'] . ".jpg" : 'https://png.pngtree.com/png-vector/20190328/ourlarge/pngtree-restaurant-logo-template-design-restaurant-logo-with-modern-frame-isolated-png-image_886208.jpg'?>>
             <div class="container">
                 <h4><b><?= $restaurant['name']; ?></b></h4>
                 <p><?= $restaurant['category']; ?></p>
