@@ -18,9 +18,13 @@ The object of the project is to fully simulate a food ordering/delivery website 
 
 ## Project setup
 
-To initialize the project's DB, navigate in the terminal to ltw-t09-g05/database/populate-script and run the following commands:
+To initialize the project's DB, after cloning the project run the following commands:
 ```
+cd ltw-t09-g05/database/populate-script
 sqlite3 db.db
+```
+In sql shell:
+```
 .read create.sql
 .read populate.sql
 ```
@@ -51,7 +55,7 @@ sqlite3 db.db
 
 ## Credentials
 
-LTWFEUP/password123
+LTWFEUP/password123  
 guest/ianigorrafa
 
 ## Members:
