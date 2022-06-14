@@ -49,11 +49,7 @@ if ($_POST['search-type'] == "rating") {
     <div class="search-div">
         <form action="/../pages/search.php" class="search" method="POST">
             <input type="text" placeholder="Showing results for: <?= $_POST['search']; ?>" name="search">
-<<<<<<< HEAD
-            <input type="text" class="search-type" name="search-type" style="display:none" value="restaurant">
-=======
             <input type="text" id="search-type" name="search-type" style="display:none" value="<?=$_POST['search-type']?>">
->>>>>>> 5ef934a0eea13ee7c509ad1ac523ef5150618ccd
             <button type="submit" class="search-button"><i></i>&#x276F</button>
         </form>
     </div>
