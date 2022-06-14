@@ -11,4 +11,10 @@ function rowid_compare_reverse($element1, $element2) {
   return $x1 - $x2;
 } 
 
+function rating_compare($element1, $element2) {
+  $x1 = ($element1['rating']);
+  $x2 = ($element2['rating']);
+  return $x2 - $x1;
+} 
+
   ?>

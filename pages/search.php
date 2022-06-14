@@ -6,6 +6,8 @@ session_start();
 require_once(__DIR__ . '/../templates/common.tpl.php');
 require_once(__DIR__ . '/../database/connection.db.php');
 require_once(__DIR__ . '/../templates/search.tpl.php');
+require_once(__DIR__ . '/../utils/sorting_utils.php');
+
 
 $db = getDatabaseConnection();
 
@@ -14,6 +16,14 @@ if ($_POST['search-type'] == "restaurant") {
     $stmt = $db->prepare('Select * from Restaurant where name LIKE ?');
     $stmt->execute(array($res));
     $results = $stmt->fetchAll();
+    foreach ($results as &$restaurant) {
+        $stmt = $db->prepare('Select avg(rating) as rating from review where idRestaurant = ?');
+        $stmt->execute(array($res));
+        $rating = $stmt->fetch();
+        $rating = (isset($rating['rating'])) ? floatval($rating['rating']) : 0;
+        $restaurant['rating'] = $rating;
+    }
+    usort($results, 'rating_compare');
 }
 if ($_POST['search-type'] == "dish") {
     $stmt = $db->prepare('select restaurant.idrestaurant, restaurant.name, restaurant.category, restaurant.address, restaurant.logo from dish inner join restaurant on dish.idRestaurant = restaurant.idRestaurant where dish.name like ?');
