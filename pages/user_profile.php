@@ -22,6 +22,7 @@ $result = $stmt->fetchAll();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../styles/common.css">
 <link rel="stylesheet" href="../styles/login.css">
+<link rel="stylesheet" href="../styles/edit.css">
 
 <script src="/../javascript/update_profile_script.js"></script>
 
@@ -60,15 +61,15 @@ $result = $stmt->fetchAll();
             </p>
         <?php } ?>
         <p>
-            <button type="submit">Save Changes</button>
+            <button type="submit" class="central-button">Save Changes</button>
         </p>
     </form>
 </div>
 <div class="login-extra-buttons">
-    <a class="fcc-btn" href='../pages/update_password.php'>Change password</a>
+    <a class="central-button" href='../pages/update_password.php'>Change password</a>
 </div>
 <div class="login-extra-buttons">
-    <a class="fcc-btn" href='../pages/manage_restaurants.php'>Manage Restaurants</a>
+    <a class="central-button" href='../pages/manage_restaurants.php'>Manage Restaurants</a>
 </div>
 
 <?php drawFooter() ?>

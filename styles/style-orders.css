@@ -69,7 +69,6 @@ table tr:first-child td {
 }
 
 .button-wrapper{
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 50px;

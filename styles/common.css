@@ -55,13 +55,7 @@ body>header {
   border-radius: 50%;
 }
 
-#avatar-preview{
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-}
-
-.clear { clear: both; height: 50px; }
+.footer-wrapper { clear: both; height: 50px; }
 
 
 footer {
@@ -75,29 +69,30 @@ footer {
     color: white;
 } 
 
-#menu {
+.header-wrapper {
     font-size: 110%;
     margin: 0.4em 1em 1em 1em;
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr;
+    align-content: center;
 }
 
-#menu > a{
-  align-self: center;
+.search-div{
+  margin-top: 2em;
+  justify-content: center;
 }
 
-
-#search > input::placeholder{
-    color:black;
-}
-
-#search{
+.search{
     display:flex;
     height: 2.5em;
 }
 
-#search > input{
+.search > input::placeholder{
+    color:black;
+}
+
+.search > input{
     box-sizing:border-box;
     margin-right:0.7em;
     width: -webkit-fill-available;
@@ -128,23 +123,18 @@ footer {
     color: black;
     border-radius: 0.5em;
     padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
     text-decoration: none;
     margin-bottom: 10px;
 }
 
-.results-grid
-{
-    display: flex;  
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.results-grid > a
-{
-    margin: 2em;
-    flex-shrink: 0;
-    background-color: lightgray;
-    width: 20%;
+.button-wrapper{
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 7em;
+  display: flex;
+  justify-content: center;
 }
 
 /* Sidenav stuff */
@@ -279,45 +269,13 @@ footer {
         margin: 10px 30px 10px 30px;
         cursor: pointer;
       }
+
   /* End of sidenav stuff */
 
-  .fcc-btn {
-    background-color: lightgray;
-    color: black;
-    border-radius: 0.5em;
-    padding: 10px 15px;
-    display: flex;
-    margin-bottom: 10px;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  label {
-    display: inline-block;
-    width: 150px;
-    text-align: right;
-  }
-
-  .labeled-form{
-    text-align: center;
-    display: block;
-    margin-bottom: 4em;
-}
-
-.labeled-form  input{
-  margin-right: 10em;
-}
-
-.management{
-  text-align: center;
-  display: block;
-  margin-top: 2em;
-  margin-bottom: 7em;
-}
-
-#search-div{
-  margin-top: 2em;
-  justify-content: center;
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
 }
 
 .search-by{

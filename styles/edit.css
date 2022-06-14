@@ -1,0 +1,16 @@
+#avatar-preview{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  }
+
+.labeled-form{
+  text-align: center;
+  display: block;
+  margin-bottom: 4em;
+}
+
+.labeled-form  input{
+  margin-right: 10em;
+}
+

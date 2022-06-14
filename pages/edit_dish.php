@@ -22,6 +22,7 @@ drawHeader();
 ?>
 <head>
     <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/edit.css">
 </head>
 <script src="/../javascript/update_profile_script.js"></script>
 <h1 style="text-align: center;">Edit Dish</h1>

@@ -64,7 +64,7 @@ drawHeader();
             <p><?= ($rating['rating']==null) ? 'Not rated' : $rating['rating'] . ' <i class="fa fa-star" aria-hidden="true"></i>' ?></p>
             </div>
             <h4 id="price"><?= "From $".number_format(floatval($minprice), 2, ",", "") ?></h4>
-            <form action="../pages/profile.php" method="get" id="search">
+            <form action="../pages/profile.php" method="get" class="search">
                 <input type="hidden" name="res" value="<?php echo ($res) ?>">
                 <input type="text" name="dish" placeholder="Search dishes">
                 <button type="submit" class="search-button"><i></i>&#x276F</button>
@@ -84,7 +84,7 @@ drawHeader();
             } ?>
         </section>
         <?php if ($isowner) { ?>
-            <div class="management">
+            <div class="button-wrapper">
                 <a class="central-button" href='../pages/edit_restaurant.php?res=<?= $res ?>'>Edit Restaurant</a>
                 <a class="central-button" style='margin-left: 10px;' href='../pages/add_dish.php?res=<?= $res ?>'>Add Dishes</a>
                 <a class="central-button" style='margin-left: 10px;' href='../pages/owner_orders.php?res=<?= $res ?>'>Manage orders</a>
@@ -107,10 +107,10 @@ drawHeader();
 
                             <td>
                                 <span>
-                                    User: <?=$review['name'] ?>
+                                    <?=$review['name'] ?> wrote:
                                 </span>
-                                <p>Review: <?= $review['review'] ?></p>
-                                <p>Rating: <?= $review['rating'] ?> <i class="fa fa-star" aria-hidden="true"></i></p>
+                                <p><span class="review-text"><?= $review['review'] ?></span> <?= $review['rating'] ?> 
+                                <i class="fa fa-star" aria-hidden="true"></i></p>
                             </td>
                         </tr>
                         <?php if ($review['answer'] != null) { ?>
@@ -119,7 +119,7 @@ drawHeader();
                                     <span>
                                         <?= $review['restaurant'] ?> answered <?= $review['name'] ?>:
                                     </span>
-                                    <p><?= $review['answer'] ?></p>
+                                    <p class="review-text"><?= $review['answer'] ?></p>
                                 </td>
                             </tr>
                         <?php } ?>

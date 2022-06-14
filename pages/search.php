@@ -37,10 +37,10 @@ if ($_POST['search-type'] == "dish") {
 </head>
 
 <body>
-    <div id="search-div">
-        <form action="/../pages/search.php" id="search" method="POST">
+    <div class="search-div">
+        <form action="/../pages/search.php" class="search" method="POST">
             <input type="text" placeholder="Showing results for: <?= $_POST['search']; ?>" name="search">
-            <input type="text" id="search-type" name="search-type" style="display:none" value="restaurant">
+            <input type="text" class="search-type" name="search-type" style="display:none" value="restaurant">
             <button type="submit" class="search-button"><i></i>&#x276F</button>
         </form>
     </div>

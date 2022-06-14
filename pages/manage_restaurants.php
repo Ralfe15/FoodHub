@@ -31,7 +31,7 @@ drawHeader();
                     }
                 ?>
             </section>
-            <div class="management">
+            <div class="button-wrapper">
                     <a class="central-button" href='../pages/add_restaurant.php'>Add New Restaurant</a>
             </div>
         </main>

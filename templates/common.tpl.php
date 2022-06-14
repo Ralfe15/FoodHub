@@ -14,7 +14,7 @@ declare(strict_types=1); ?>
 
     <body>
         <header>
-            <div id="menu">
+            <div class="header-wrapper">
                 <a href="../pages/index.php" id="return">FoodHub</a>
                 <?php if (isset($_SESSION['id'])) drawLogoutOptions($_SESSION["id"]);
                 else drawLoginOptions();
@@ -25,7 +25,7 @@ declare(strict_types=1); ?>
 
     <?php function drawFooter()
     { ?>
-    <div class="clear"></div>
+    <div class="footer-wrapper"></div>
         <footer>
             LTW Project &copy; 2022
         </footer>

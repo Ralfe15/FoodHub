@@ -18,10 +18,10 @@ drawHeader();
 
 <body>
     <img class="logo-home" src="https://manualdeimagem.up.pt/files/uportonegativofundoopaco.jpg" />
-    <div id="search-div">
-        <form action="../pages/search.php" id="search" method="POST">
+    <div class="search-div">
+        <form action="../pages/search.php" class="search" method="POST">
             <input type="text" placeholder="Search.." name="search">
-            <input type="text" id="search-type" name="search-type" style="display:none" value="restaurant">      
+            <input type="text" class="search-type" name="search-type" style="display:none" value="restaurant">      
             <button type="submit" class="search-button"><i></i>&#x276F</button>      
         </form>
     </div>
@@ -40,9 +40,9 @@ drawHeader();
         </div>
     <?php if (isset($_SESSION['id'])) { ?>
         <div class="button-wrapper">
-            <a class="fcc-btn" href='../pages/user_orders.php'>Your orders</a>
-            <a class="fcc-btn" href='../pages/favorite_restaurants.php'>Your favorite restaurants</a>
-            <a class="fcc-btn" href='../pages/favorite_dishes.php'>Your favorite dishes</a>
+            <a class="central-button" href='../pages/user_orders.php'>Your orders</a>
+            <a class="central-button" href='../pages/favorite_restaurants.php'>Your favorite restaurants</a>
+            <a class="central-button" href='../pages/favorite_dishes.php'>Your favorite dishes</a>
         </div>
     <?php
     }

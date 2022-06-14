@@ -28,7 +28,7 @@ declare(strict_types=1); ?>
             <h3 class="dish_price"><?= "$ " . number_format(floatval($dish['price']), 2, ",", "") ?></h3>
             <?php
             if (isset($_SESSION['id'])) { ?>
-                <button class="fcc-btn buy-button" onclick='addToCart(<?= json_encode($dish); ?>)'>Add to cart</button>
+                <button class="central-button buy-button" onclick='addToCart(<?= json_encode($dish); ?>)'>Add to cart</button>
             <?php } ?>
     </article>
 <?php } ?>
