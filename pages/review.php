@@ -70,7 +70,7 @@ if ($status == 'answered') {
                 </td>
                 <td>
                     <div class="total">
-                        <span class="price">$<?= number_format($total,2,",") ?></span>
+                        <span class="price">$<?= number_format($total,2,",", "") ?></span>
                     </div>
                 </td>
             </tr>

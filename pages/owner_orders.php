@@ -35,7 +35,7 @@ foreach($result as $order){
 
 <div class="wrapper">
     <div class="title-wrapper">
-        <h1>Your restaurant`s orders</h1>
+        <h1>Your restaurant's orders</h1>
     </div>
     <table class="orders-table">
         <tbody>

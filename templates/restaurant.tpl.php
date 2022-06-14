@@ -13,7 +13,7 @@
             <?php }?>
         </h2>
         <h4 class="dish_category"><?=ucfirst($dish['category'])?></h5>
-        <h3 class="dish_price"><?="$ ". number_format(floatval($dish['price']),2,",")?></h3>
+        <h3 class="dish_price"><?="$ ". number_format(floatval($dish['price']),2,",", "")?></h3>
         <?php
             if(isset($_SESSION['id'])){?>
                 <button class="fcc-btn buy-button" onclick='addToCart(<?=json_encode($dish);?>)'>Add to cart</button>
