@@ -126,10 +126,4 @@ function checkout() {
       throw new Error(response.message);
     }
   });
-
-
-
-
-
-
 }

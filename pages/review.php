@@ -144,3 +144,4 @@ if ($status == 'answered') {
     ?>
 
 </div>
+<?php drawFooter()?>

@@ -71,4 +71,4 @@ $result = $stmt->fetchAll();
     <a class="fcc-btn" href='../pages/manage_restaurants.php'>Manage Restaurants</a>
 </div>
 
-
+<?php drawFooter()?>
