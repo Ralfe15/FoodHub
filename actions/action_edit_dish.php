@@ -28,9 +28,9 @@
     $stmt->execute(array($category, $id));
   }
   if(!empty($price)){
-    $price = str_replace(".", ",", $price);
-    if(strpos($price, ",") == false)
-      $price = $price . ",00";
+    $price = str_replace(",", ".", $price);
+    if(strpos($price, ".") == false)
+      $price = $price . ".00";
     $stmt = $db->prepare("Select price from Dish where idDish = ?");
     $stmt->execute(array($id));
     $prevPrice = $stmt->fetch();
