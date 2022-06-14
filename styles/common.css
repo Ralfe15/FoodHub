@@ -348,13 +348,18 @@ footer {
     justify-content: right;
   }
   .search-by .option-2{
+    justify-content: center;
+  }
+  .search-by .option-3{
     justify-content: left;
   }
   input[type="radio"]{
     display: none;
   }
   #option-1:checked:checked ~ .option-1,
-  #option-2:checked:checked ~ .option-2{
+  #option-2:checked:checked ~ .option-2,
+  #option-3:checked:checked ~ .option-3
+  {
     border-color: darkgray;
     background: darkgray;
   }
@@ -362,6 +367,8 @@ footer {
     color: #808080;
   }
   #option-1:checked:checked ~ .option-1 span,
-  #option-2:checked:checked ~ .option-2 span{
+  #option-2:checked:checked ~ .option-2 span,
+  #option-3:checked:checked ~ .option-3 span
+  {
     color: #fff;
   }
