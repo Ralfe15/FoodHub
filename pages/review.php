@@ -131,10 +131,9 @@ if ($status == 'answered') {
     ?>
     <?php if ($status == 'reviewed') { ?>
         <h3>Reply to review:</h3>
-        <!-- TODO action submit reply below -->
         <form method="POST" action="../actions/action_submit_answer.php">
             <input style="display:none" type='text' name="idOrder" value='<?= $order_id ?>' />
-            <input style="display:none" type='text' name="res" value='<?= $_GET['res'] ?>' />
+            <input style="display:none" type='text' name="res" value='<?= $id_restaurant ?>' />
             <div class="text-wrapper">
                 <textarea required id="subject" name="subject" placeholder="Reply to customer review" style="width: 50vw;height:200px"></textarea>
                 <button type="submit">Submit</button>

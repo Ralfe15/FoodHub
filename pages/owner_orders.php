@@ -20,13 +20,21 @@ if (!isset($_SESSION['id'])) {
 
 $res = $_GET['res'];
 $db = getDatabaseConnection();
-$stmt = $db->prepare('select user_order.idUser, user_order.idOrder, user_order.date, user_order.total, user_order.status, restaurant.name from user_order inner join restaurant on user_order.idRestaurant = restaurant.idRestaurant where user_order.idRestaurant = ?');
+$stmt = $db->prepare('select user_order.rowid, user_order.idUser, user_order.idOrder, user_order.date, user_order.total, user_order.status, restaurant.name from user_order inner join restaurant on user_order.idRestaurant = restaurant.idRestaurant where user_order.idRestaurant = ?');
 $stmt -> execute(array($res));
 $result = $stmt->fetchAll();
 $orders = array();
+$complete_orders = array();
 foreach($result as $order){
-    $orders[] = $order;
+    if(($order['status']!='reviewed') && ($order['status']!='answered'))
+        $orders[] = $order;
+    else
+        $complete_orders[] = $order;
 }
+usort($orders, 'rowid_compare_reverse');
+usort($complete_orders, 'rowid_compare');
+
+$orders = array_merge($orders, $complete_orders);
 //Array ( [0] => Array ( [idUser] => 60 [idOrder] => 6297c6ca2f781 [date] => 2022-06-01 [total] => 36 [status] => reviewed [name] => Smokey’s Texas Grill ) )
 ?>
 
