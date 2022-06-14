@@ -36,6 +36,15 @@
   unlink($mediumFileName);
 }?>
 
+<?php function deleteAvatarImage($id) {
+  $originalFileName = "../images/user/originals/" . $id . ".jpg";
+  $smallFileName = "../images/user/small/" . $id . ".jpg";
+  $mediumFileName = "../images/user/medium/" . $id . ".jpg";
+  unlink($originalFileName);
+  unlink($smallFileName);
+  unlink($mediumFileName);
+}?>
+
 
 <?php function createResizedRestaurantImages($fileName){
   if (!is_dir('../images/restaurant/medium')) {
@@ -87,5 +96,34 @@
   $square = min($width, $height);
   $small = imagecreatetruecolor(200, 200);
   imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 200, 200, $square, $square);
+  imagejpeg($small, $smallFileName);
+}?>
+
+<?php function createResizedAvatars($fileName){
+  if (!is_dir('../images/user/medium')) {
+    mkdir('../images/user/medium');
+  }
+  if (!is_dir('../images/user/small')) {
+    mkdir('../images/user/small');
+  }
+  $originalFileName = "../images/user/originals/" . $fileName . ".jpg";
+  $mediumFileName = "../images/user/medium/" . $fileName . ".jpg";
+  $smallFileName = "../images/user/small/" . $fileName . ".jpg";
+
+  $original = imagecreatefromjpeg($originalFileName);
+
+  if (!$original) die();
+
+  $width = imagesx($original);     // width of the original image
+  $height = imagesy($original);    // height of the original image
+  $square = min($width, $height);  // size length of the maximum square
+
+  // Calculate width and height of medium sized image (max width: 400)
+  $medium = imagecreatetruecolor(100, 100);
+  imagecopyresized($medium, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 100, 100, $square, $square);
+  imagejpeg($medium, $mediumFileName);
+
+  $small = imagecreatetruecolor(50, 50);
+  imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 50, 50, $square, $square);
   imagejpeg($small, $smallFileName);
 }?>

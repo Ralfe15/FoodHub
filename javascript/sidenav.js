@@ -13,7 +13,7 @@ function openNav() {
     assembleCartItem(dish, ammount);
   }
   total.textContent = "$" + parseFloat(total_val).toFixed(2);
-  document.getElementById("mySidenav").style.width = "350px";
+  document.getElementById("mySidenav").style.width = "360px";
   if (total_val == 0) {
     document.querySelector(".checkout-button").style.display = "none"
   }

@@ -7,7 +7,7 @@ declare(strict_types=1); ?>
     <html lang="en-US">
 
     <head>
-        <title>Ifoodclone</title>
+        <title>FoodHub</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles/common.css">
     </head>
@@ -15,8 +15,8 @@ declare(strict_types=1); ?>
     <body>
         <header>
             <div id="menu">
-                <a href="../pages/index.php" id="return">Ifoodclone</a>
-                <?php if (isset($_SESSION['id'])) drawLogoutOptions($_SESSION["name"]);
+                <a href="../pages/index.php" id="return">FoodHub</a>
+                <?php if (isset($_SESSION['id'])) drawLogoutOptions($_SESSION["id"]);
                 else drawLoginOptions();
                 ?>
             </div>
@@ -33,25 +33,6 @@ declare(strict_types=1); ?>
 
     </html>
 <?php } ?>
-
-<?php function drawHeaderLogged()
-{ ?>
-    <!DOCTYPE html>
-    <html lang="en-US">
-
-    <head>
-        <title>Ifoodclone</title>
-        <meta charset="utf-8">
-    </head>
-
-    <body>
-        <header>
-            <div id="menu">
-                <a href="../pages/index.php" id="return">Ifoodclone</a>
-
-            </div>
-        </header>
-    <?php } ?>
 
     <?php function drawLoginOptions()
     { ?>
@@ -82,13 +63,21 @@ declare(strict_types=1); ?>
         </div>
     <?php } ?>
 
-    <?php function drawLogoutOptions(string $name)
-    { ?>
+    <?php function drawLogoutOptions($id){
+        require_once(__DIR__ . '/../database/connection.db.php');
+        $db = getDatabaseConnection();
+        $stmt = $db->prepare('Select * from User where idUser = ?');
+        $stmt->execute(array($id));
+        $user = $stmt->fetchAll();?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <?= drawCartSidenav() ?>
         <div id="register">
             <a href="/../actions/action_logout.php" onclick="clearSession()" id="signup">Log out</a>
-            <a href="/../pages/user_profile.php" id="login"><?= $name ?></a>
+            <a href="/../pages/user_profile.php" id="login"><?= $user[0]['name'] ?></a>
+            <a href="/../pages/user_profile.php">
+                <img  id="avatar" src=<?php echo ($user[0]['avatar']!=null) ? "../images/user/small/". $user[0]['avatar'] .".jpg" : 'https://picsum.photos/200/200?business?id='.$user['idUser']?>>
+            </a>
             <a onclick="openNav()" id="cart"><i style="font-size:larger" class="fa fa-shopping-cart"></i></a>
         </div>
     <?php } ?>
+            
