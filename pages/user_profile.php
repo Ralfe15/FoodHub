@@ -24,19 +24,11 @@ $result = $stmt->fetchAll();
 <link rel="stylesheet" href="../styles/login.css">
 
 <script src="/../javascript/update_profile_script.js"></script>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="jquery.form.js"></script>
-<script>
-$(document).ready(function() { 
- $('form').ajaxForm(function() { 
- }); 
-});
-</script>
-
 <h1 style="text-align: center;">Edit profile </h1>
 <div class="labeled-form">
-    <form action="../actions/action_update_profile.php" method="post" enctype="multipart/form-data">
+    <form id="imageform" action="../actions/action_update_profile.php" method="post" enctype="multipart/form-data">
         <?php
+        $id = $result[0]['idUser'];
         unset($result[0]['idUser']);
         unset($result[0]['password']);
         foreach ($result[0] as $field => $value) {
@@ -60,22 +52,16 @@ $(document).ready(function() {
         ?>
             <p>
                 <label><?= ucfirst($field) ?>:</label>
-                <input type=<?= $type ?> <?php echo ($field=='avatar')?'':'required';?> name="<?= $field ?>" value="<?= $value ?>" />
+                <input type=<?= $type ?> <?php echo ($field=='avatar')?'id=photoimg':'required';?> name="<?= $field ?>" value="<?= $value ?>" />
             </p>
-        <?php   
-        if(isset($_POST['avatar']))
-        {
-         $avatar=$_FILES["avatar"]["tmp_name"];
-         $folder="images/";
-         move_uploaded_file($_FILES["upload_file"]["tmp_name"], "$folder".$_FILES["upload_file"]["name"]);
-         exit();
-        }
-        }
-        ?>
+        <?php }?>
         <p>
             <button type="submit">Save Changes</button>
         </p>
     </form>
+    <div id='preview'>
+    <img  id="avatar" src=<?php echo ($id!=null) ? "../images/user/small/". $result[0]['avatar'] .".jpg" : 'https://picsum.photos/200/200?business?id='. $id?>>
+        </div>
 
 </div>
 <div class="login-extra-buttons">

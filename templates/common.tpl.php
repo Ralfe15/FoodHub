@@ -74,9 +74,11 @@ declare(strict_types=1); ?>
         <div id="register">
             <a href="/../actions/action_logout.php" onclick="clearSession()" id="signup">Log out</a>
             <a href="/../pages/user_profile.php" id="login"><?= $user[0]['name'] ?></a>
-            <a href="/../pages/user_profile.php">
-                <img  id="avatar" src=<?php echo ($user[0]['avatar']!=null) ? "../images/user/small/". $user[0]['avatar'] .".jpg" : 'https://picsum.photos/200/200?business?id='.$user['idUser']?>>
-            </a>
+            <?php if(!empty($user[0]['avatar'])){ ?>
+                <a href="/../pages/user_profile.php">
+                    <img  id="avatar" src=<?php echo "../images/user/small/". $user[0]['avatar'] .".jpg" ?>>
+                </a>
+                <?php } ?>
             <a onclick="openNav()" id="cart"><i style="font-size:larger" class="fa fa-shopping-cart"></i></a>
         </div>
     <?php } ?>
