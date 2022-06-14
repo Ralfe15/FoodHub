@@ -55,8 +55,8 @@ In sql shell:
 
 ## Credentials
 
-LTWFEUP/password123  
-guest/ianigorrafa
+ltw@ltw.com / password123  
+guest@guest.com / ianigorrafa
 
 ## Members:
 
