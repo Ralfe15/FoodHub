@@ -21,3 +21,10 @@ function getRestaurantsByAddress(PDO $db, string $search, int $count) : array {
     $restaurants = $stmt->fetchAll();
     return $restaurants;
 }
+
+function getDishPriceHistory(PDO $db, string $search) : array {
+    $stmt = $db->prepare('SELECT * FROM Dish_price_history where idDish=?');
+    $stmt->execute(array($search));
+    $dishes = $stmt->fetchAll();
+    return $dishes;
+}

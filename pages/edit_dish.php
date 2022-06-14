@@ -38,7 +38,7 @@ drawHeader();
         </p>
         <p>
             <label>Price:</label>
-            <input type="text" name="price" placeholder="<?=$result[0]["price"]?>" />
+            <input type="number" min="0.01" step="0.01" name="price" placeholder="<?=$result[0]["price"]?>" />
         </p>
         <p>
             <label>Photo:</label>

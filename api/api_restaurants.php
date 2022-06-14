@@ -12,6 +12,7 @@
   switch($type){
       case 'name': $restaurants = getRestaurantsByName($db, $search, 8); echo json_encode($restaurants); die();
       case 'address': $restaurants = getRestaurantsByAddress($db, $search, 8); echo json_encode($restaurants); die();
+      case 'history': $dishes = getDishPriceHistory($db, $search); echo json_encode($dishes); die();
       default: $restaurants = []; echo json_encode($restaurants); die();
   }
   

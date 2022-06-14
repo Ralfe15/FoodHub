@@ -13,6 +13,8 @@ DROP TABLE IF EXISTS User_order;
 DROP TABLE IF EXISTS Restaurant_owner;
 DROP TABLE IF EXISTS Favorites;
 DROP TABLE IF EXISTS Favorite_dishes;
+DROP TABLE IF EXISTS Dish_price_history;
+
 
 
 CREATE TABLE User(
@@ -86,6 +88,13 @@ CREATE TABLE Favorite_restaurants(
 CREATE TABLE Favorite_dishes(
     idUser number NOT NULL REFERENCES User(idUser),
     idDish number NOT NULL REFERENCES Dish(idDish)
+);
+
+CREATE TABLE Dish_price_history(
+    idDish number NOT NULL REFERENCES Dish(idDish),
+    prevPrice varchar(255) NOT NULL,
+    NewPrice varchar(255) NOT NULL,
+    changeDate varchar(255) NOT NULL
 );
 
 

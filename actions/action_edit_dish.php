@@ -28,11 +28,18 @@
     $stmt->execute(array($category, $id));
   }
   if(!empty($price)){
-    str_replace(".", ",", $price);
+    $price = str_replace(".", ",", $price);
     if(strpos($price, ",") == false)
       $price = $price . ",00";
+    $stmt = $db->prepare("Select price from Dish where idDish = ?");
+    $stmt->execute(array($id));
+    $prevPrice = $stmt->fetch();
     $stmt = $db->prepare("Update Dish set price = ? where idDish = ?");
     $stmt->execute(array($price, $id));
+    $date = date('Y-m-d H:i:s');
+    $stmt = $db->prepare("Insert into Dish_price_history values (?, ?, ?, ?)");
+    $stmt->execute(array($id, $prevPrice['price'],$price, $date));
+    
   }
   if(is_uploaded_file($_FILES['image']['tmp_name'])){
     $stmt = $db->prepare("Select * from Dish where idDish = ?");
@@ -47,4 +54,3 @@
   }
 
   header('Location: http://localhost:9000/pages/profile.php?res=' . $idRestaurant);
-?>
