@@ -61,13 +61,13 @@ guest@guest.com / ianigorrafa
 ## REST API specifications
 
 URL: http://localhost:9000/api/api_restaurants.php/?search="SEARCH-VALUE"&type="SEARCH-TYPE"  
-Possible values for <SEARCH-TYPE>:
-  - name, look for restaurants with names that look like <SEARCH-VALUE>
-  - address, look for restaurants with addresses that look like <SEARCH-VALUE>
-  - history, price history for dish with id=<SEARCH-VALUE>
+Possible values for "SEARCH-TYPE":
+  - name, look for restaurants with names that look like "SEARCH-TYPE"
+  - address, look for restaurants with addresses that look like "SEARCH-TYPE"
+  - history, price history for dish with id="SEARCH-TYPE"
   - dishes, get all possible dishes
-  - price, get all dishes cheaper than <SEARCH-VALUE>
-  - rating, get all restaurants with average rating greater or equals <SEARCH-VALUE>
+  - price, get all dishes cheaper than "SEARCH-TYPE"
+  - rating, get all restaurants with average rating greater or equals "SEARCH-TYPE"
 
 ## Members:
 
