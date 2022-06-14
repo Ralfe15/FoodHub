@@ -58,6 +58,17 @@ In sql shell:
 ltw@ltw.com / password123  
 guest@guest.com / ianigorrafa
 
+## REST API specifications
+
+URL: http://localhost:9000/api/api_restaurants.php/?search="SEARCH-VALUE"&type="SEARCH-TYPE"  
+Possible values for <SEARCH-TYPE>:
+  - name, look for restaurants with names that look like <SEARCH-VALUE>
+  - address, look for restaurants with addresses that look like <SEARCH-VALUE>
+  - history, price history for dish with id=<SEARCH-VALUE>
+  - dishes, get all possible dishes
+  - price, get all dishes cheaper than <SEARCH-VALUE>
+  - rating, get all restaurants with average rating greater or equals <SEARCH-VALUE>
+
 ## Members:
 
 - Ian Ítalo Martins Gomes (ianitalo) - up202000707
