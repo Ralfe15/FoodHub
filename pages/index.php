@@ -29,6 +29,8 @@ drawHeader();
             <span>By:</span>
             <input type="radio" name="select" id="option-1" value = "restaurant" checked onclick="toggleSearch()">
             <input type="radio" name="select" id="option-2" value= "dish" onclick="toggleSearch()">
+            <input type="radio" name="select" id="option-3" value= "rating" onclick="toggleSearch()">
+
             <label for="option-1" class="option option-1" name="restaurant">
                 <div class="dot"></div>
                 <span>Restaurant</span>
@@ -36,6 +38,10 @@ drawHeader();
             <label for="option-2" class="option option-2" name="dish">
                 <div class="dot"></div>
                 <span>Dish</span>
+            </label>
+            <label for="option-3" class="option option-3" name="rating">
+                <div class="dot"></div>
+                <span>Rating</span>
             </label>
         </div>
     <?php if (isset($_SESSION['id'])) { ?>
