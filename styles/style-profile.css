@@ -79,12 +79,15 @@
         display:flex;
         flex-direction: column;
         justify-content: space-between;
+        border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
 }
 
 #highlights img{
     object-fit: contain;
     max-height: 100%;
     max-width: 100%;
+    min-width: 100%;
     border-top-left-radius: 0.8em;
     border-top-right-radius: 0.8em;
 }

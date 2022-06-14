@@ -38,3 +38,4 @@ $restaurants = array();
         ?>
     </section>
 </div>
+<?php drawFooter()?>

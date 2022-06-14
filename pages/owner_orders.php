@@ -56,3 +56,4 @@ $orders = array_merge($orders, $complete_orders);
         </tbody>
     </table>
 </div>
+<?php drawFooter()?>

@@ -41,3 +41,4 @@ foreach ($result as $restaurant) {
         ?>
 </section>
 </div>
+<?php drawFooter()?>

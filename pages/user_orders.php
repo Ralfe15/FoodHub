@@ -49,3 +49,4 @@ usort($orders, 'rowid_compare');
         </tbody>
     </table>
 </div>
+<?php drawFooter()?>
