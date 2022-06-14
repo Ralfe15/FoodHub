@@ -55,6 +55,12 @@ body>header {
   border-radius: 50%;
 }
 
+#avatar-preview{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
 .clear { clear: both; height: 50px; }
 
 
