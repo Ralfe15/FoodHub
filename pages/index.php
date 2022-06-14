@@ -42,7 +42,7 @@ drawHeader();
         <div class="button-wrapper">
             <a class="fcc-btn" href='../pages/user_orders.php'>Your orders</a>
             <a class="fcc-btn" href='../pages/favorite_restaurants.php'>Your favorite restaurants</a>
-
+            <a class="fcc-btn" href='../pages/favorite_dishes.php'>Your favorite dishes</a>
         </div>
     <?php
     }

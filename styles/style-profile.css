@@ -123,3 +123,9 @@
 .buy-button{
     margin: 0 auto;
 }
+
+.fa-star{
+    -webkit-text-fill-color: yellow;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
