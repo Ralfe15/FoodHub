@@ -70,9 +70,6 @@ footer {
     grid-template-rows: 1fr;
 }
 
-#rating{
-    display: none;
-} 
 
 #search > input::placeholder{
     color:black;

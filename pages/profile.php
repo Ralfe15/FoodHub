@@ -13,7 +13,9 @@ $res = $_GET['res'];
 $stmt = $db->prepare('Select * from Restaurant where idRestaurant = ?');
 $stmt->execute(array($res));
 $result = $stmt->fetchAll();
-
+$stmt = $db->prepare('Select avg(rating) as rating from Review where idRestaurant = ?');
+$stmt->execute(array($res));
+$rating = $stmt->fetch();
 $stmt = $db->prepare('Select * from Dish where idRestaurant = ?');
 $stmt->execute(array($res));
 $dishes = $stmt->fetchAll();
@@ -56,9 +58,11 @@ drawHeader();
         <div class="profile">
             <h1 id="title"><a href="../pages/profile.php?res=<?php echo ($res) ?>"><?php echo ($result[0]["name"]) ?></a></h1>
             <a href="../pages/profile.php?res=<?php echo ($res) ?>" id="logo"><img src=<?php echo ($result[0]['logo'] != null) ? "../images/restaurant/medium/" . $result[0]['logo'] . ".jpg" : 'https://www.citypng.com/public/uploads/preview/-11600735522qbwj7xtpxu.png' ?>></a>
-            <h4 id="category"><?php echo ($result[0]["category"]) ?></h4>
+            <div id="category">
+            <h4><?php echo ($result[0]["category"]) ?></h4>
+            <p><?= ($rating['rating']==null) ? 'Not rated' : $rating['rating'] . ' <i class="fa fa-star" aria-hidden="true"></i>' ?></p>
+            </div>
             <h4 id="price"><?= "From $".number_format(floatval($minprice), 2, ",", "") ?></h4>
-            <h4 id="rating">5</h4>
             <form action="../pages/profile.php" method="get" id="search">
                 <input type="hidden" name="res" value="<?php echo ($res) ?>">
                 <input type="text" name="dish" placeholder="Search dishes">
