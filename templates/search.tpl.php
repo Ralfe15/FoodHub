@@ -9,7 +9,7 @@
     $stmt->execute(array($restaurant['idRestaurant']));
     $rating = $stmt->fetch();
     $rating = (isset($rating['rating'])) ? number_format((float)$rating['rating'], 1, '.', '') . '  <i class="fa fa-star" aria-hidden="true"></i>' : "No ratings";
-    
+
     if(isset($_SESSION['id'])){
         $stmt = $db->prepare('Select * from Favorite_restaurants where idRestaurant = ? and idUser = ?');
         $stmt->execute(array($restaurant['idRestaurant'], $_SESSION['id']));

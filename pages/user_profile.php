@@ -24,6 +24,7 @@ $result = $stmt->fetchAll();
 <link rel="stylesheet" href="../styles/login.css">
 
 <script src="/../javascript/update_profile_script.js"></script>
+
 <h1 style="text-align: center;">Edit profile </h1>
 <div class="labeled-form">
     <form id="imageform" action="../actions/action_update_profile.php" method="post" enctype="multipart/form-data">
@@ -59,9 +60,6 @@ $result = $stmt->fetchAll();
             <button type="submit">Save Changes</button>
         </p>
     </form>
-    <div id='preview'>
-    <img  id="avatar" src=<?php echo ($id!=null) ? "../images/user/small/". $result[0]['avatar'] .".jpg" : 'https://picsum.photos/200/200?business?id='. $id?>>
-        </div>
 
 </div>
 <div class="login-extra-buttons">
